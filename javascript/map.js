@@ -148,7 +148,7 @@ function initMap() {
         disableDefaultUI: true
     });
 
-    let greenMarker = './assets/maps/green-marker.png';
+    let greenMarker = './assets/images/maps/green-marker.png';
     let marker = new google.maps.Marker({
         position: lavington22, 
         map: map, 
