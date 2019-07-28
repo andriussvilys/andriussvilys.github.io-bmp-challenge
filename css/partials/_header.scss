@@ -1,0 +1,130 @@
+header{
+    height: 100vh;
+    position: relative;
+
+    // grid-row-start: 2;
+    // grid-column-start: 1;
+    // grid-column-end: 4;
+
+    display: grid;
+    grid-template-rows: [nav]max-content [margin]1fr [text-box]min-content [mouse-icon]1fr;
+    // grid-template-rows: [nav]max-content [margin]1fr [text-box]min-content [mouse-icon]minmax(140px, 1fr);
+    grid-template-columns: [margin-left]14.6vw [logo-textbox]auto [links]auto [margin-right]14.6vw;
+    // grid-template-columns: [margin-left]14.6vw [logo-textbox]max-content [links]auto [margin-right]14.6vw;
+    
+
+    overflow: hidden;
+}
+
+//text-box
+
+.text-box{
+    grid-column-start: 2;
+    grid-row-start: 3;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.text-box--headline{
+  font-family: "MaisonNeue-Book";
+  font-size: 2em;
+  line-height: 1.2em;
+  max-width: 340px;
+}
+.text-box--subheadline{
+  font-family: "MaisonNeue-LightItalic";
+  font-size: 1em;
+  margin: 40px 0 30px 6px;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.header--cta{
+  @include cta;
+}
+
+//Key Visual
+
+@mixin full-stretch{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 5; 
+}
+
+.kv{
+    @include full-stretch;
+    position: relative;
+    z-index: -1;
+}
+
+@mixin kv-content{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.kv--pattern{
+    @include kv-content;
+    background:rgba(0,0,0,0.4) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=");
+    z-index: -1;
+  }
+
+.kv--image{
+    @include kv-content;
+    object-fit: cover;
+    z-index: -2;
+}
+
+
+
+// .cta--text{
+
+// }
+
+//mouse-icon
+  .mouse-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-left: -17px;
+    left: 50%;
+    bottom: 20px;     
+  }
+
+  .mouse-icon--caret {
+      width: 20px;
+      margin-top: 17px;
+  }
+
+  //tablet
+  @media screen and (max-width: 768px) {
+    .text-box{
+      max-width: 200px;
+    }
+    .text-box--headline{
+        font-size: 1.5em;
+    }
+    .text-box--subheadline{
+        font-size: 0.7em;
+        margin: 30px 0 20px 10px;
+    }
+    .mouse-icon{
+        display:none;
+    }
+    .header--cta{
+      padding: 15px 26px;
+    }
+  }
+
+  //horizontal mobile
+  @media screen and (max-height: 480px){
+    .text-box{
+      max-width: 80%;
+    }
+  }

@@ -1,0 +1,149 @@
+
+nav{
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+
+  width: 100%;
+  // z-index: 2;
+  display: grid;
+  grid-template-columns: [logo]min-content [gutter]minmax(50px, 1fr) [links]auto ;
+  // grid-template-columns: [margin-right]minmax(42px, 285px) [logo]min-content [gutter]minmax(50px, 1fr) [links]auto [margin-left]minmax(42px, 285px);
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer{
+  width: 100vw;
+  @include drop-shadow;
+  position: absolute;
+  z-index: 1;
+}
+
+nav, .drawer{
+  height: 70px;
+  background-color: #ffffff;
+}
+
+.logo{
+  z-index: 2;
+  grid-column-start: 1;
+  width: 110px;
+  img{
+    width: 100%;
+  }
+}
+
+//LINKS
+
+.menu-links-container{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  width: 460px;
+}
+.menu--list{
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+//should be 250x60
+.button{
+  overflow: hidden;
+  padding: 0 3px 0 3px;
+  position: relative;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.button-text{
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 16px;
+  font-family: "MaisonNeue-Book";
+  text-decoration: none;
+}
+
+.button-text::before{
+  content:'';
+  height: 10px;
+  width: 100%;
+  background-color: lime;
+  position: absolute;
+  top: 10px;
+  left: -100%;
+  transition: all 0.2s;
+  z-index: -1;
+}
+
+//HAMBURGAR
+@import "hamburger";
+.hamburger{
+grid-column-end: 4;
+display: none;
+z-index: 2;
+}
+
+
+//MEDIA QUERIES
+
+//tablet 
+@media screen and (max-width: 768px) {
+  .mouse-icon{
+    display:none;
+  }
+
+  .hamburger{
+    display: block;
+  }
+
+  .menu-links-container{
+    @include drop-shadow;
+    display: none;
+    background-color: #ffffff;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    position: absolute;
+    top: -110%;
+    left: 0;
+    padding-top: 70px;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    transition: top 0.6s;
+  }
+  
+  .menu-links-container__display-on{
+    display: block;
+    top: 0;
+  }
+
+  .menu--list{
+    flex-direction: column;
+    align-items: center;
+    height: 42%;
+    margin-top: 115px;
+  }
+
+  // .hamburger:hover .menu-links-container{
+  //   top: 0;
+  // }
+}
+
+
+//phone (widest common phone models)
+@media screen and (max-width: 480px) {
+  nav, .drawer{
+    height: 60px;
+  }
+  .menu-links-container{
+    padding-top: 60px;
+  }
+  .logo{
+    width: 56px;
+  }
+}
