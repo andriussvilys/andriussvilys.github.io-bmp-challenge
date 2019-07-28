@@ -7,6 +7,7 @@
 
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -29,12 +30,29 @@ body {
   src: url("../assets/fonts/MaisonNeueTRIAL-Bold.otf") format("opentype");
 }
 
+.grid, .testimonials, .logos, .carousel {
+  display: none;
+}
+
+.wrapper {
+  width: 100vw;
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: min-content calc(100vh - 70px) 87vh auto;
+      grid-template-rows: -webkit-min-content calc(100vh - 70px) 87vh auto;
+      grid-template-rows: min-content calc(100vh - 70px) 87vh auto;
+  -ms-grid-columns: [margin-left] 14.6vw [middle-content] auto [margin-right] 14.6vw;
+      grid-template-columns: [margin-left] 14.6vw [middle-content] auto [margin-right] 14.6vw;
+}
+
 nav {
   -ms-grid-column: 2;
       grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-end: 3;
   -ms-grid-row: 1;
       grid-row-start: 1;
+  grid-row-end: 2;
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -50,10 +68,14 @@ nav {
 }
 
 .drawer {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
   width: 100vw;
   -webkit-box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.17);
           box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.17);
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
 }
 
@@ -307,7 +329,6 @@ nav, .drawer {
         -ms-flex-align: center;
             align-items: center;
     height: 42%;
-    margin-top: 115px;
   }
 }
 
@@ -315,31 +336,45 @@ nav, .drawer {
   nav, .drawer {
     height: 60px;
   }
-  .menu-links-container {
-    padding-top: 60px;
-  }
   .logo {
     width: 56px;
+  }
+  .kv {
+    top: 60px;
+  }
+  .wrapper {
+    -ms-grid-rows: min-content calc(100vh - 60px) 87vh auto;
+        grid-template-rows: -webkit-min-content calc(100vh - 60px) 87vh auto;
+        grid-template-rows: min-content calc(100vh - 60px) 87vh auto;
   }
 }
 
 header {
-  height: 100vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: [nav] max-content [margin] 1fr [text-box] min-content [mouse-icon] 1.4fr;
-      grid-template-rows: [nav] -webkit-max-content [margin] 1fr [text-box] -webkit-min-content [mouse-icon] 1.4fr;
-      grid-template-rows: [nav] max-content [margin] 1fr [text-box] min-content [mouse-icon] 1.4fr;
-  -ms-grid-columns: [margin-left] 14.6vw [logo-textbox] auto [links] auto [margin-right] 14.6vw;
-      grid-template-columns: [margin-left] 14.6vw [logo-textbox] auto [links] auto [margin-right] 14.6vw;
-  overflow: hidden;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
 .text-box {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  -ms-grid-row: 3;
-      grid-row-start: 3;
   color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -351,9 +386,6 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
 }
 
 .text-box--headline {
@@ -383,19 +415,21 @@ header {
   font-family: "MaisonNeue-Book";
   text-transform: uppercase;
   font-size: 1em;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
   display: inline-block;
   padding: 1.05em 2.7em;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .kv {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 5;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  grid-row-end: 5;
-  position: relative;
+  position: absolute;
+  top: 70px;
+  left: 0;
   z-index: -1;
+  width: 100vw;
+  height: calc(100vh - 70px);
 }
 
 .kv--pattern {
@@ -461,12 +495,21 @@ header {
   .text-box br {
     display: block;
   }
+  .text-box--headline {
+    width: 320px;
+  }
   .header--cta {
     padding: 0.8em 1.2em;
+  }
+  .kv {
+    top: 60px;
   }
 }
 
 @media screen and (max-height: 480px) {
+  .mouse-icon {
+    display: none;
+  }
   .text-box {
     max-width: 50%;
     font-size: 12px;
@@ -475,9 +518,16 @@ header {
     height: 70%;
     margin-top: 30px;
   }
+  .kv {
+    height: calc(100vh - 60px);
+    top: 60px;
+  }
 }
 
 .txt {
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-row-end: 4;
   height: 87vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -489,6 +539,9 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .txt-headline {
@@ -500,7 +553,12 @@ header {
   color: #8e8e8e;
 }
 
-#map {
-  height: 100vh;
+.map {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  grid-row-end: 5;
 }
 /*# sourceMappingURL=main.css.map */

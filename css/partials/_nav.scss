@@ -1,9 +1,11 @@
 
 nav{
 
-  grid-column-start: 2;
-  grid-column-end: 4;
+  // grid-column-start: 2;
+  // grid-column-end: 4;
+  @include middle-column;
   grid-row-start: 1;
+  grid-row-end: 2;
 
   width: 100%;
   // z-index: 2;
@@ -15,9 +17,12 @@ nav{
 }
 
 .drawer{
+  grid-column-start: 1;
   width: 100vw;
   @include drop-shadow;
   position: absolute;
+  top: 0;
+  left:0;
   z-index: 1;
 }
 
@@ -129,35 +134,30 @@ z-index: 2;
     flex-direction: column;
     align-items: center;
     height: 42%;
-    margin-top: 115px;
+    // margin-top: 115px;************
   }
-
-  // .hamburger:hover .menu-links-container{
-  //   top: 0;
-  // }
 }
 
 @mixin mobile-nav-height{
-  nav, .drawer{
-    height: 60px;
-  }
-  .menu-links-container{
-    padding-top: 60px;
-  }
-  .logo{
-    width: 56px;
-  }
-}
+      nav, .drawer{
+        height: 60px;
+   }
+  //****************************************
+  //   .menu-links-container{
+  //       padding-top: 60px;
+  //  }
+    .logo{
+        width: 56px;
+   }
+   .kv{
+     top: 60px;
+   }
+ }
 
 //phone (widest common phone models)
 @media screen and (max-width: 480px), 
 screen and (max-height: 480px)
 {
   @include mobile-nav-height;
+  .wrapper{grid-template-rows: min-content calc(100vh - 60px) 87vh auto;}
 }
-//horizontal phone
-// @media screen and (max-height: 480px){
-
-// @include mobile-nav-height;
-  
-// }
