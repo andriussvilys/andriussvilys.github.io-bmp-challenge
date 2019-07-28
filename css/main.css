@@ -120,6 +120,10 @@ nav, .drawer {
   z-index: -1;
 }
 
+.button:hover .button-text::before {
+  left: 0;
+}
+
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -307,7 +311,7 @@ nav, .drawer {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px), screen and (max-height: 480px) {
   nav, .drawer {
     height: 60px;
   }
@@ -321,12 +325,11 @@ nav, .drawer {
 
 header {
   height: 100vh;
-  position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: [nav] max-content [margin] 1fr [text-box] min-content [mouse-icon] 1fr;
-      grid-template-rows: [nav] -webkit-max-content [margin] 1fr [text-box] -webkit-min-content [mouse-icon] 1fr;
-      grid-template-rows: [nav] max-content [margin] 1fr [text-box] min-content [mouse-icon] 1fr;
+  -ms-grid-rows: [nav] max-content [margin] 1fr [text-box] min-content [mouse-icon] 1.4fr;
+      grid-template-rows: [nav] -webkit-max-content [margin] 1fr [text-box] -webkit-min-content [mouse-icon] 1.4fr;
+      grid-template-rows: [nav] max-content [margin] 1fr [text-box] min-content [mouse-icon] 1.4fr;
   -ms-grid-columns: [margin-left] 14.6vw [logo-textbox] auto [links] auto [margin-right] 14.6vw;
       grid-template-columns: [margin-left] 14.6vw [logo-textbox] auto [links] auto [margin-right] 14.6vw;
   overflow: hidden;
@@ -354,16 +357,21 @@ header {
 }
 
 .text-box--headline {
-  font-family: "MaisonNeue-Book";
-  font-size: 2em;
+  font-family: "MaisonNeue-Bold";
+  font-weight: 200;
+  font-size: 3em;
   line-height: 1.2em;
-  max-width: 340px;
+  max-width: 500px;
+}
+
+.text-box--headline br {
+  display: none;
 }
 
 .text-box--subheadline {
   font-family: "MaisonNeue-LightItalic";
-  font-size: 1em;
-  margin: 40px 0 30px 6px;
+  font-size: 1.55em;
+  margin: 1.3em 0 1em 4px;
   margin-left: 10px;
   white-space: nowrap;
 }
@@ -374,9 +382,9 @@ header {
   color: #fafafa;
   font-family: "MaisonNeue-Book";
   text-transform: uppercase;
-  font-size: 0.75em;
+  font-size: 1em;
   display: inline-block;
-  padding: 20px 40px;
+  padding: 1.05em 2.7em;
 }
 
 .kv {
@@ -432,15 +440,11 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-  .text-box {
-    max-width: 200px;
-  }
   .text-box--headline {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   .text-box--subheadline {
-    font-size: 0.7em;
-    margin: 30px 0 20px 10px;
+    font-size: 1em;
   }
   .mouse-icon {
     display: none;
@@ -450,9 +454,26 @@ header {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .text-box {
+    font-size: 14px;
+  }
+  .text-box br {
+    display: block;
+  }
+  .header--cta {
+    padding: 0.8em 1.2em;
+  }
+}
+
 @media screen and (max-height: 480px) {
   .text-box {
-    max-width: 80%;
+    max-width: 50%;
+    font-size: 12px;
+  }
+  .menu--list {
+    height: 70%;
+    margin-top: 30px;
   }
 }
 

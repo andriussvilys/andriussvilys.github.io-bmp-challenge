@@ -1,17 +1,9 @@
 header{
     height: 100vh;
-    position: relative;
-
-    // grid-row-start: 2;
-    // grid-column-start: 1;
-    // grid-column-end: 4;
 
     display: grid;
-    grid-template-rows: [nav]max-content [margin]1fr [text-box]min-content [mouse-icon]1fr;
-    // grid-template-rows: [nav]max-content [margin]1fr [text-box]min-content [mouse-icon]minmax(140px, 1fr);
+    grid-template-rows: [nav]max-content [margin]1fr [text-box]min-content [mouse-icon]1.4fr;
     grid-template-columns: [margin-left]14.6vw [logo-textbox]auto [links]auto [margin-right]14.6vw;
-    // grid-template-columns: [margin-left]14.6vw [logo-textbox]max-content [links]auto [margin-right]14.6vw;
-    
 
     overflow: hidden;
 }
@@ -26,18 +18,24 @@ header{
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
+    // max-height: 430px;
 }
 
 .text-box--headline{
-  font-family: "MaisonNeue-Book";
-  font-size: 2em;
+  font-family: "MaisonNeue-Bold";
+  font-weight: 200;
+  font-size: 3em;
   line-height: 1.2em;
-  max-width: 340px;
+  max-width: 500px;
+  br{
+    display: none;
+  }
 }
+
 .text-box--subheadline{
   font-family: "MaisonNeue-LightItalic";
-  font-size: 1em;
-  margin: 40px 0 30px 6px;
+  font-size: 1.55em;
+  margin: 1.3em 0 1em 4px;
   margin-left: 10px;
   white-space: nowrap;
 }
@@ -80,12 +78,6 @@ header{
     z-index: -2;
 }
 
-
-
-// .cta--text{
-
-// }
-
 //mouse-icon
   .mouse-icon{
     display: flex;
@@ -102,17 +94,14 @@ header{
       margin-top: 17px;
   }
 
+  //MEDIA QUERIES
   //tablet
   @media screen and (max-width: 768px) {
-    .text-box{
-      max-width: 200px;
-    }
     .text-box--headline{
-        font-size: 1.5em;
+        font-size: 2em;
     }
     .text-box--subheadline{
-        font-size: 0.7em;
-        margin: 30px 0 20px 10px;
+        font-size: 1em;
     }
     .mouse-icon{
         display:none;
@@ -122,9 +111,27 @@ header{
     }
   }
 
-  //horizontal mobile
+//phone
+  @media screen and (max-width: 480px) {
+    .text-box{
+      font-size: 14px;
+      br{
+        display: block;
+      }
+    }
+    .header--cta{
+      padding: 0.8em 1.2em;
+    }
+  }
+
+//horizontal mobile
   @media screen and (max-height: 480px){
     .text-box{
-      max-width: 80%;
+      max-width: 50%;
+      font-size: 12px;
+    }
+    .menu--list{
+      height: 70%;
+      margin-top: 30px;
     }
   }
