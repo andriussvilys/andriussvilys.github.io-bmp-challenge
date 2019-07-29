@@ -44,7 +44,32 @@ header{
 
 .header--cta{
   @include cta;
+  position: relative;
+  overflow: hidden;
 }
+// .header--cta-text{
+//   position: relative;
+// }
+
+.header--cta::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: lime;
+  left: -100%;
+  top: 0;
+  position: absolute;
+  transition: left 0.4s;
+}
+
+.header--cta:hover .header--cta::before{
+  left: 0;
+}
+
+// .header--cta:hover{
+//   background-color: rgba(0,255,0,0.4);
+// }
 
 //Key Visual
 
@@ -89,26 +114,46 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
+    position: relative;
     margin-left: -17px;
     left: 50%;
-    bottom: 6.4vh;     
+    bottom: 6.4vh; 
+    cursor: pointer; 
+    height: 80px;
+    justify-content: space-between;   
+
+    animation: mouse 4s ease-in 2s infinite;
   }
 
   .mouse-icon--caret {
       width: 20px;
-      margin-top: 17px;
-      margin-left: 4px;
+      // margin-top: 17px;
+      // margin-left: 4px;
+      animation: caret 4s ease-in 2s infinite;
+      position: absolute;
+      bottom: -5px;
   }
+
+  @keyframes mouse {
+    0% {bottom: 6.4vh}
+    10% {bottom: 4vh}
+    20% {bottom: 6.4vh}
+}
+//   @keyframes caret {
+//     0% {bottom: 0px}
+//     10% {margin-top: 10px}
+//     20% {margin-top: 0px}
+// }
 
   //MEDIA QUERIES
   //tablet
 
-  @media screen and (max-width: 768px)
+  @media screen and (max-width: 1080px)
   // ,screen and (max-height: 768px)
   {
-    .text-box--headline{
+      .text-box--headline{
         font-size: 2em;
+        max-width: 400px;;
     }
     .text-box--subheadline{
         font-size: 1em;
@@ -119,6 +164,28 @@ header{
     .header--cta{
       padding: 15px 26px;
     }
+  }
+
+  // @media screen and (max-height: 768px){
+  //   .mouse-icon{
+  //     display: none;
+  //   }
+  // }
+  @media screen and (max-width: 768px)
+  // ,screen and (max-height: 768px)
+  {
+    // .text-box--headline{
+    //     font-size: 2em;
+    // }
+    // .text-box--subheadline{
+    //     font-size: 1em;
+    // }
+    // .mouse-icon{
+    //     display:none;
+    // }
+    // .header--cta{
+    //   padding: 15px 26px;
+    // }
     .kv{
       height: calc(100vh - 60px);
       top: 60px;
