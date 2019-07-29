@@ -42,8 +42,16 @@ body {
   -ms-grid-rows: min-content calc(100vh - 70px) 87vh auto;
       grid-template-rows: -webkit-min-content calc(100vh - 70px) 87vh auto;
       grid-template-rows: min-content calc(100vh - 70px) 87vh auto;
-  -ms-grid-columns: [margin-left] 14.6vw [middle-content] auto [margin-right] 14.6vw;
-      grid-template-columns: [margin-left] 14.6vw [middle-content] auto [margin-right] 14.6vw;
+  -ms-grid-columns: [margin-left] minmax(40px, 14.6vw) [middle-content] auto minmax(40px, 14.6vw);
+      grid-template-columns: [margin-left] minmax(40px, 14.6vw) [middle-content] auto minmax(40px, 14.6vw);
+}
+
+@media screen and (max-width: 768px), screen and (max-height: 786px) {
+  .wrapper {
+    -ms-grid-rows: min-content calc(100vh - 60px) 87vh auto;
+        grid-template-rows: -webkit-min-content calc(100vh - 60px) 87vh auto;
+        grid-template-rows: min-content calc(100vh - 60px) 87vh auto;
+  }
 }
 
 nav {
@@ -56,9 +64,9 @@ nav {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: [logo] min-content [gutter] minmax(50px, 1fr) [links] auto;
-      grid-template-columns: [logo] -webkit-min-content [gutter] minmax(50px, 1fr) [links] auto;
-      grid-template-columns: [logo] min-content [gutter] minmax(50px, 1fr) [links] auto;
+  -ms-grid-columns: [logo] min-content [gutter] minmax(50px, 29.42vw) [links] auto 1fr;
+      grid-template-columns: [logo] -webkit-min-content [gutter] minmax(50px, 29.42vw) [links] auto 1fr;
+      grid-template-columns: [logo] min-content [gutter] minmax(50px, 29.42vw) [links] auto 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -111,6 +119,8 @@ nav, .drawer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-width: 400px;
+  max-width: 460px;
 }
 
 .button {
@@ -332,7 +342,7 @@ nav, .drawer {
   }
 }
 
-@media screen and (max-width: 480px), screen and (max-height: 480px) {
+@media screen and (max-width: 768px) {
   nav, .drawer {
     height: 60px;
   }
@@ -341,6 +351,11 @@ nav, .drawer {
   }
   .kv {
     top: 60px;
+  }
+  nav {
+    -ms-grid-columns: [logo] min-content [gutter] 1fr [links] auto;
+        grid-template-columns: [logo] -webkit-min-content [gutter] 1fr [links] auto;
+        grid-template-columns: [logo] min-content [gutter] 1fr [links] auto;
   }
   .wrapper {
     -ms-grid-rows: min-content calc(100vh - 60px) 87vh auto;
@@ -391,9 +406,8 @@ header {
 .text-box--headline {
   font-family: "MaisonNeue-Bold";
   font-weight: 200;
-  font-size: 3em;
-  line-height: 1.2em;
-  max-width: 500px;
+  font-size: 3.5em;
+  max-width: 605px;
 }
 
 .text-box--headline br {
@@ -403,7 +417,7 @@ header {
 .text-box--subheadline {
   font-family: "MaisonNeue-LightItalic";
   font-size: 1.55em;
-  margin: 1.3em 0 1em 4px;
+  margin: 1.8em 0 1.4em 4px;
   margin-left: 10px;
   white-space: nowrap;
 }
@@ -412,7 +426,7 @@ header {
   border: 2px solid #fafafa;
   border-radius: 999px;
   color: #fafafa;
-  font-family: "MaisonNeue-Book";
+  font-family: "MaisonNeue-Bold";
   text-transform: uppercase;
   font-size: 1em;
   -ms-flex-item-align: baseline;
@@ -465,12 +479,13 @@ header {
   position: absolute;
   margin-left: -17px;
   left: 50%;
-  bottom: 20px;
+  bottom: 6.4vh;
 }
 
 .mouse-icon--caret {
   width: 20px;
   margin-top: 17px;
+  margin-left: 4px;
 }
 
 @media screen and (max-width: 768px) {
@@ -486,6 +501,10 @@ header {
   .header--cta {
     padding: 15px 26px;
   }
+  .kv {
+    height: calc(100vh - 60px);
+    top: 60px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -496,31 +515,26 @@ header {
     display: block;
   }
   .text-box--headline {
-    width: 320px;
+    max-width: none;
   }
   .header--cta {
     padding: 0.8em 1.2em;
   }
-  .kv {
-    top: 60px;
-  }
 }
 
 @media screen and (max-height: 480px) {
+  body {
+    font-size: 12px;
+  }
   .mouse-icon {
     display: none;
   }
-  .text-box {
-    max-width: 50%;
-    font-size: 12px;
+  .text-box, .text-box--headline {
+    max-width: none;
   }
   .menu--list {
     height: 70%;
     margin-top: 30px;
-  }
-  .kv {
-    height: calc(100vh - 60px);
-    top: 60px;
   }
 }
 

@@ -28,7 +28,7 @@ header{
   font-weight: 200;
   font-size: 3.5em;
   // line-height: 76.5px;
-  max-width: 31.5vw;
+  max-width: 605px;
   br{
     display: none;
   }
@@ -98,12 +98,15 @@ header{
   .mouse-icon--caret {
       width: 20px;
       margin-top: 17px;
+      margin-left: 4px;
   }
 
   //MEDIA QUERIES
   //tablet
-  @media screen and (max-width: 768px),
-  screen and (max-height: 768px){
+
+  @media screen and (max-width: 768px)
+  // ,screen and (max-height: 768px)
+  {
     .text-box--headline{
         font-size: 2em;
     }
@@ -121,35 +124,52 @@ header{
       top: 60px;
     }
   }
+  // @media screen and (max-height: 768px){
+  //   .text-box--headline{
+  //       font-size: 2em;
+  //   }
+  //   .text-box--subheadline{
+  //       font-size: 1em;
+  //   }
+  //   .mouse-icon{
+  //       display:none;
+  //   }
+  //   .header--cta{
+  //     padding: 15px 26px;
+  //   }
+  //   .kv{
+  //     height: calc(100vh - 60px);
+  //     top: 60px;
+  //   }
+  // }
 
 //phone
   @media screen and (max-width: 480px) {
     .text-box{
       font-size: 14px;
-      max-width: 330px;
+      // max-width: 330px;
       br{
         display: block;
       }
     }
     .text-box--headline{
-      width: 320px;
+      max-width: none;
     }
     .header--cta{
       padding: 0.8em 1.2em;
     }
-    // .kv{
-    //   top: 60px;
-    // }
   }
 
 //horizontal mobile
   @media screen and (max-height: 480px){
+    body{
+      font-size: 12px;
+    }
     .mouse-icon{
       display: none;
     }
-    .text-box{
-      max-width: 50%;
-      font-size: 12px;
+    .text-box, .text-box--headline{
+      max-width: none;
     }
     .menu--list{
       height: 70%;
