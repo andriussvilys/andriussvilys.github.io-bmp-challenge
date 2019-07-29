@@ -10,6 +10,8 @@ body{
     overflow-x: hidden;
 }
 
+//FONTS
+
 @font-face{
     font-family: "MaisonNeue-Book";
     src: url("../assets/fonts/MaisonNeueTRIAL-Book.otf") format("opentype");
@@ -30,8 +32,12 @@ body{
     src: url("../assets/fonts/MaisonNeueTRIAL-Bold.otf") format("opentype");
   }
 
-  $cta-light: #fafafa;
+  //VARIABLES
 
+  $cta-light: #fafafa;
+  
+
+  //MIXINS
   @mixin middle-column{
     grid-column-start: 2;
     grid-column-end: 3;
@@ -53,7 +59,7 @@ body{
     border-radius: 999px;
 
     color: #fafafa;
-    font-family: "MaisonNeue-Book";
+    font-family: "MaisonNeue-Bold";
     text-transform: uppercase;
     font-size: 1em;
 
@@ -74,22 +80,17 @@ body{
     overflow: hidden;
     display: grid;
     grid-template-rows: min-content calc(100vh - 70px) 87vh auto;
-    grid-template-columns: [margin-left]14.6vw [middle-content]auto [margin-right]14.6vw;
+    grid-template-columns: [margin-left]minmax(40px, 14.6vw) [middle-content]auto minmax(40px, 14.6vw);
   }
-  // @mixin margin-grid{
-  //   display: grid;
-  //   grid-template-columns: minmax(42px, 285px) 50%;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
+
+   @media screen and (max-width: 768px), 
+   screen and (max-height: 786px){
+      .wrapper{    
+        grid-template-rows: min-content calc(100vh - 60px) 87vh auto;
+        }
+    }
 
   @import "partials/nav";
   @import "partials/header";
   @import "partials/txt";
   @import "partials/map";
-
-  // .wrapper{
-  //   display: grid;
-  //   grid-template-rows: 70px calc(100vh - 70px);
-  //   grid-template-columns: minmax(42px, 285px) max-content 1fr;
-  // }

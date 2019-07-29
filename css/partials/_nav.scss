@@ -10,7 +10,7 @@ nav{
   width: 100%;
   // z-index: 2;
   display: grid;
-  grid-template-columns: [logo]min-content [gutter]minmax(50px, 1fr) [links]auto ;
+  grid-template-columns: [logo]min-content [gutter]minmax(50px, 29.42vw) [links]auto 1fr;
   // grid-template-columns: [margin-right]minmax(42px, 285px) [logo]min-content [gutter]minmax(50px, 1fr) [links]auto [margin-left]minmax(42px, 285px);
   align-items: center;
   justify-content: center;
@@ -52,9 +52,10 @@ nav, .drawer{
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  min-width: 400px;
+  max-width: 460px;
 }
 
-//should be 250x60
 .button{
   overflow: hidden;
   padding: 0 3px 0 3px;
@@ -155,9 +156,16 @@ z-index: 2;
  }
 
 //phone (widest common phone models)
-@media screen and (max-width: 480px), 
-screen and (max-height: 480px)
+@media screen and (max-width: 768px), 
+screen and (max-height: 786px)
 {
   @include mobile-nav-height;
-  .wrapper{grid-template-rows: min-content calc(100vh - 60px) 87vh auto;}
+  nav{grid-template-columns: [logo]min-content [gutter]1fr [links]auto;}
 }
+// @media screen and (max-width: 480px), 
+// screen and (max-height: 480px)
+// {
+//   @include mobile-nav-height;
+//   .wrapper{grid-template-rows: min-content calc(100vh - 60px) 87vh auto;};
+//   grid-template-columns: [logo]min-content [gutter]1fr [links]auto;
+// }
