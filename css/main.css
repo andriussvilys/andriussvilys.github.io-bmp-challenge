@@ -42,8 +42,9 @@ body {
   -ms-grid-rows: min-content calc(100vh - 70px) 87vh auto;
       grid-template-rows: -webkit-min-content calc(100vh - 70px) 87vh auto;
       grid-template-rows: min-content calc(100vh - 70px) 87vh auto;
-  -ms-grid-columns: [margin-left] minmax(40px, 14.6vw) [middle-content] auto minmax(40px, 14.6vw);
-      grid-template-columns: [margin-left] minmax(40px, 14.6vw) [middle-content] auto minmax(40px, 14.6vw);
+  -ms-grid-columns: [margin-left] 14.6vw [middle-content] auto 14.6vw;
+      grid-template-columns: [margin-left] 14.6vw [middle-content] auto 14.6vw;
+  position: relative;
 }
 
 @media screen and (max-width: 768px), screen and (max-height: 786px) {
@@ -313,9 +314,8 @@ nav, .drawer {
     position: absolute;
     top: -110%;
     left: 0;
-    padding-top: 70px;
-    height: 100%;
-    width: 100%;
+    height: calc(100vh - 60px);
+    width: 100vw;
     z-index: 1;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -323,12 +323,17 @@ nav, .drawer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-transition: top 0.6s;
     transition: top 0.6s;
   }
   .menu-links-container__display-on {
-    display: block;
-    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 60px;
   }
   .menu--list {
     -webkit-box-orient: vertical;
@@ -342,7 +347,7 @@ nav, .drawer {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (max-height: 786px) {
   nav, .drawer {
     height: 60px;
   }
@@ -406,8 +411,8 @@ header {
 .text-box--headline {
   font-family: "MaisonNeue-Bold";
   font-weight: 200;
-  font-size: 3.5em;
-  max-width: 605px;
+  font-size: 3vw;
+  max-width: 31.5vw;
 }
 
 .text-box--headline br {
@@ -435,7 +440,7 @@ header {
   display: inline-block;
   padding: 1.05em 2.7em;
   cursor: pointer;
-  z-index: 2;
+  z-index: 0;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
   position: relative;
@@ -451,12 +456,12 @@ header {
   left: -100%;
   top: 0;
   position: absolute;
-  -webkit-transition: left 0.4s;
-  transition: left 0.4s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
-.header--cta:hover .header--cta::before {
-  left: 0;
+.header--cta:hover {
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .kv {
@@ -466,6 +471,16 @@ header {
   z-index: -1;
   width: 100vw;
   height: calc(100vh - 70px);
+}
+
+.kv--gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, rgba(0, 0, 0, 0.892837)), color-stop(53%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.892837) 8%, rgba(0, 0, 0, 0) 53%);
+  opacity: 0.49;
 }
 
 .kv--pattern {
@@ -498,48 +513,46 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  margin-left: -17px;
-  left: 50%;
-  bottom: 6.4vh;
-  cursor: pointer;
-  height: 80px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  top: 83.6vh;
+  cursor: pointer;
+  height: 7.4vh;
+  width: 1.875vw;
   -webkit-animation: mouse 4s ease-in 2s infinite;
           animation: mouse 4s ease-in 2s infinite;
 }
 
+.mouse-icon--mouse {
+  height: 65%;
+}
+
 .mouse-icon--caret {
-  width: 20px;
-  -webkit-animation: caret 4s ease-in 2s infinite;
-          animation: caret 4s ease-in 2s infinite;
-  position: absolute;
-  bottom: -5px;
+  width: 1.04vw;
 }
 
 @-webkit-keyframes mouse {
-  0% {
-    bottom: 6.4vh;
-  }
-  10% {
-    bottom: 4vh;
+  12% {
+    -webkit-transform: translateY(7px);
+            transform: translateY(7px);
   }
   20% {
-    bottom: 6.4vh;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
 @keyframes mouse {
-  0% {
-    bottom: 6.4vh;
-  }
-  10% {
-    bottom: 4vh;
+  12% {
+    -webkit-transform: translateY(7px);
+            transform: translateY(7px);
   }
   20% {
-    bottom: 6.4vh;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -559,7 +572,7 @@ header {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (max-height: 768px) {
   .kv {
     height: calc(100vh - 60px);
     top: 60px;
@@ -581,7 +594,7 @@ header {
   }
 }
 
-@media screen and (max-height: 480px) {
+@media screen and (max-height: 468px) {
   body {
     font-size: 12px;
   }
@@ -593,7 +606,6 @@ header {
   }
   .menu--list {
     height: 70%;
-    margin-top: 30px;
   }
 }
 
@@ -607,8 +619,9 @@ header {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -619,11 +632,39 @@ header {
 
 .txt-headline {
   font-family: "MaisonNeue-Bold";
+  font-size: 4vw;
+  max-width: 40%;
 }
 
 .txt-subheadline {
   font-family: "MaisonNeue-LightItalic";
   color: #8e8e8e;
+  font-size: 1.5vw;
+  max-width: 40%;
+}
+
+@media screen and (max-width: 468px) {
+  .txt {
+    padding: 17.1vh 0 17.7vh 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .txt-headline {
+    font-family: "MaisonNeue-Bold";
+    font-size: 12vw;
+    line-height: 7.4vh;
+  }
+  .txt-subheadline {
+    font-family: "MaisonNeue-LightItalic";
+    color: #8e8e8e;
+    font-size: 4.6vw;
+    line-height: 4vh;
+  }
+  .txt-headline, .txt-subheadline {
+    max-width: none;
+  }
 }
 
 .map {
@@ -633,5 +674,11 @@ header {
   -ms-grid-row: 4;
       grid-row-start: 4;
   grid-row-end: 5;
+  height: 70vh;
+  width: 100vw;
+}
+
+#map {
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */

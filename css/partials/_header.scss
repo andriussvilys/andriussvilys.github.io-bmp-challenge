@@ -6,6 +6,8 @@ header{
     grid-row-start: 2;
     grid-row-end: 3;
     align-items: start;
+
+    // position: relative;
     // position: relative;
 }
 
@@ -26,9 +28,9 @@ header{
 .text-box--headline{
   font-family: "MaisonNeue-Bold";
   font-weight: 200;
-  font-size: 3.5em;
+  font-size: 3vw;
   // line-height: 76.5px;
-  max-width: 605px;
+  max-width: 31.5vw;
   br{
     display: none;
   }
@@ -47,9 +49,6 @@ header{
   position: relative;
   overflow: hidden;
 }
-// .header--cta-text{
-//   position: relative;
-// }
 
 .header--cta::before{
   content: "";
@@ -60,25 +59,22 @@ header{
   left: -100%;
   top: 0;
   position: absolute;
-  transition: left 0.4s;
+  transition: all 1s;
 }
 
-.header--cta:hover .header--cta::before{
-  left: 0;
+.header--cta:hover{
+  background-color: rgba(255,255,255,0.15);
+  // transform: scale(1.03);
 }
-
-// .header--cta:hover{
-//   background-color: rgba(0,255,0,0.4);
-// }
 
 //Key Visual
 
-@mixin full-stretch{
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 5; 
-}
+// @mixin full-stretch{
+//   grid-column-start: 1;
+//   grid-column-end: 3;
+//   grid-row-start: 2;
+//   grid-row-end: 5; 
+// }
 
 .kv{
     // @include full-stretch;
@@ -95,6 +91,12 @@ header{
     height: 100%;
     position: absolute;
     top: 0;
+}
+
+.kv--gradient{
+  @include kv-content;
+  background: linear-gradient(90deg, rgba(0,0,0,0.8928370100728582) 8%, rgba(0,0,0,0) 53%);
+  opacity: 0.49;
 }
 
 .kv--pattern{
@@ -114,31 +116,36 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    margin-left: -17px;
+    justify-content: space-between;  
+    position: absolute; 
+    // margin-left: -17px;
     left: 50%;
-    bottom: 6.4vh; 
+    top: 83.6vh; 
     cursor: pointer; 
-    height: 80px;
-    justify-content: space-between;   
+    height: 7.4vh;
+    width: 1.875vw;
 
     animation: mouse 4s ease-in 2s infinite;
   }
 
+  .mouse-icon--mouse{
+    height: 65%;
+  }
+
   .mouse-icon--caret {
-      width: 20px;
-      // margin-top: 17px;
-      // margin-left: 4px;
-      animation: caret 4s ease-in 2s infinite;
-      position: absolute;
-      bottom: -5px;
+      width: 1.04vw;
   }
 
   @keyframes mouse {
-    0% {bottom: 6.4vh}
-    10% {bottom: 4vh}
-    20% {bottom: 6.4vh}
+    12%{
+      transform: translateY(7px);
+    }
+    20%{
+      transform: translateY(0);
+    }
+
 }
+
 //   @keyframes caret {
 //     0% {bottom: 0px}
 //     10% {margin-top: 10px}
@@ -172,7 +179,7 @@ header{
   //   }
   // }
   @media screen and (max-width: 768px)
-  // ,screen and (max-height: 768px)
+  ,screen and (max-height: 768px)
   {
     // .text-box--headline{
     //     font-size: 2em;
@@ -228,7 +235,7 @@ header{
   }
 
 //horizontal mobile
-  @media screen and (max-height: 480px){
+  @media screen and (max-height: 468px){
     body{
       font-size: 12px;
     }
@@ -240,8 +247,12 @@ header{
     }
     .menu--list{
       height: 70%;
-      margin-top: 30px;
+      // margin-top: 30px;
     }
+    // .kv{
+    //   top: 60px;
+    //   height: calc(100vh - 60px)
+    // }
     // .kv{
     //   height: calc(100vh - 60px);
     //   top: 60px;
