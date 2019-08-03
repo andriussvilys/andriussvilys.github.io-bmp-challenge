@@ -30,7 +30,7 @@ body {
   src: url("../assets/fonts/MaisonNeueTRIAL-Bold.otf") format("opentype");
 }
 
-.grid, .testimonials, .logos, .carousel {
+.testimonials, .logos, .carousel {
   display: none;
 }
 
@@ -347,7 +347,7 @@ nav, .drawer {
   }
 }
 
-@media screen and (max-width: 768px), screen and (max-height: 786px) {
+@media screen and (max-width: 768px) {
   nav, .drawer {
     height: 60px;
   }
@@ -413,6 +413,7 @@ header {
   font-weight: 200;
   font-size: 3vw;
   max-width: 31.5vw;
+  line-height: 6.7vh;
 }
 
 .text-box--headline br {
