@@ -6,6 +6,7 @@
 }
 
 body {
+  width: 100vw;
   height: 100%;
   overflow-x: hidden;
 }
@@ -718,22 +719,32 @@ header {
 }
 
 .grid-folio {
+  position: relative;
   width: 50%;
-}
-
-.grid-folio--photo {
-  width: 50%;
-  position: absolute;
   height: 50%;
 }
 
-.grid-folio--photo__large {
+.grid-folio--photo {
   width: 100%;
+  position: absolute;
   height: 100%;
 }
 
-.grid-folio--info__headline
-, .grid-folio--info__subheadline {
-  display: none;
+.grid-folio--info {
+  position: absolute;
+  bottom: 0;
+  padding: 0 4.17vw 4.26vh 2.29vw;
+}
+
+.grid-folio--info__headline {
+  font-family: "MaisonNeue-Bold";
+  color: #ffffff;
+  font-size: 1.5vw;
+}
+
+.grid-folio--info__subheadline {
+  font-family: "MaisonNeue-BookItalic";
+  color: #ffffff;
+  font-size: 1.4vw;
 }
 /*# sourceMappingURL=main.css.map */

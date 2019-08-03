@@ -23,6 +23,8 @@
     position: absolute;
     right: 0;
     top: 0;
+    // position: relative;
+    // left: 50%;
     display: flex;
     flex-wrap: wrap;
     height: 100%;
@@ -31,7 +33,9 @@
 
 .grid-folio{
 // height: 50%;
+position: relative;
 width: 50%;
+height: 50%;
 // position: absolute;
 // object-fit: cover;
 // object-position: left;
@@ -40,18 +44,28 @@ width: 50%;
 
 // .grid-folio--gradient
 .grid-folio--photo{
-    width: 50%;
-    position: absolute;
-    height: 50%;
-}
-.grid-folio--photo__large{
     width: 100%;
+    position: absolute;
     height: 100%;
 }
+// .grid-folio--photo__large{
+//     width: 100%;
+//     height: 100%;
+// }
 
-
-.grid-folio--info__headline
-, .grid-folio--info__subheadline{
-    display: none;
+.grid-folio--info{
+    position: absolute;
+    bottom: 0;
+    padding: 0 4.17vw 4.26vh 2.29vw
+}
+.grid-folio--info__headline{
+    font-family: "MaisonNeue-Bold";
+    color: #ffffff;
+    font-size: 1.5vw;
+}
+.grid-folio--info__subheadline{
+    font-family: "MaisonNeue-BookItalic";
+    color: #ffffff;
+    font-size: 1.4vw;
 }
 
