@@ -80,7 +80,7 @@ body{
   }
 
   // .grid, 
-  .testimonials, .logos, .carousel{
+  .testimonials, .logos, .carousel, .map{
     display: none;
   }
 
@@ -105,3 +105,4 @@ body{
   @import "partials/header";
   @import "partials/txt";
   @import "partials/map";
+  @import "partials/grid";
