@@ -3,6 +3,7 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -429,6 +430,14 @@ header {
   white-space: nowrap;
 }
 
+.text-box--subheadline p {
+  font: inherit;
+}
+
+.text-box--subheadline span {
+  font-style: italic;
+}
+
 .header--cta {
   border: 2px solid #fafafa;
   border-radius: 999px;
@@ -482,7 +491,7 @@ header {
   top: 0;
   background: -webkit-gradient(linear, left top, right top, color-stop(8%, rgba(0, 0, 0, 0.892837)), color-stop(53%, rgba(0, 0, 0, 0)));
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.892837) 8%, rgba(0, 0, 0, 0) 53%);
-  opacity: 0.49;
+  opacity: 0.6;
 }
 
 .kv--pattern {
@@ -724,6 +733,16 @@ header {
   height: 50%;
 }
 
+.grid-folio--gradient {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(8%, rgba(0, 0, 0, 0.892837)), color-stop(53%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.892837) 8%, rgba(0, 0, 0, 0) 53%);
+  opacity: 0.49;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
 .grid-folio--photo {
   width: 100%;
   position: absolute;
@@ -732,19 +751,25 @@ header {
 
 .grid-folio--info {
   position: absolute;
+  z-index: 3;
   bottom: 0;
   padding: 0 4.17vw 4.26vh 2.29vw;
 }
 
 .grid-folio--info__headline {
-  font-family: "MaisonNeue-Bold";
+  font-family: "MaisonNeue-Bold", "sans-serif";
   color: #ffffff;
   font-size: 1.5vw;
+}
+
+.grid-folio--info__headline span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .grid-folio--info__subheadline {
   font-family: "MaisonNeue-BookItalic";
   color: #ffffff;
-  font-size: 1.4vw;
+  font-size: 1.3vw;
 }
 /*# sourceMappingURL=main.css.map */
