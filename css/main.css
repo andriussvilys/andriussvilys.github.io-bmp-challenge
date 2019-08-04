@@ -12,6 +12,12 @@ body {
   overflow-x: hidden;
 }
 
+button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+}
+
 @font-face {
   font-family: "MaisonNeue-Book";
   src: url("../assets/fonts/MaisonNeueTRIAL-Book.otf") format("opentype");
@@ -32,7 +38,7 @@ body {
   src: url("../assets/fonts/MaisonNeueTRIAL-Bold.otf") format("opentype");
 }
 
-.testimonials, .logos, .carousel, .map {
+.logos, .carousel, .map {
   display: none;
 }
 
@@ -41,9 +47,9 @@ body {
   overflow: hidden;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: min-content calc(100vh - 70px) repear(6, auto);
-      grid-template-rows: -webkit-min-content calc(100vh - 70px) repear(6, auto);
-      grid-template-rows: min-content calc(100vh - 70px) repear(6, auto);
+  -ms-grid-rows: min-content calc(100vh - 70px) (auto)[6];
+      grid-template-rows: -webkit-min-content calc(100vh - 70px) repeat(6, auto);
+      grid-template-rows: min-content calc(100vh - 70px) repeat(6, auto);
   -ms-grid-columns: [margin-left] 14.6vw [middle-content] auto 14.6vw;
       grid-template-columns: [margin-left] 14.6vw [middle-content] auto 14.6vw;
   position: relative;
@@ -891,6 +897,155 @@ header {
   .grid-folio--info__subheadline {
     font-size: 3vw;
   }
+}
+
+.testimonials {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  -ms-grid-row: 5;
+      grid-row-start: 5;
+  grid-row-end: 6;
+  position: relative;
+  height: 41.66vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.testimonials-header
+, .testimonials-company {
+  text-transform: uppercase;
+  font-family: "MaisonNeue-Bold";
+}
+
+.testimonials-header {
+  position: absolute;
+  left: 0;
+  top: 3.29vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.testimonials-header--text {
+  color: #9d9d9d;
+  font-size: 16px;
+}
+
+.testimonials-header--dash {
+  background-color: #9d9d9d;
+  height: 2px;
+  width: 27px;
+  margin: auto 0;
+  margin-right: 32px;
+}
+
+.testimonials-content {
+  height: 22.66vw;
+  width: 49.0625vw;
+  position: relative;
+}
+
+.testimonials-content--name-box {
+  margin-left: 17.18vw;
+  margin-bottom: 17px;
+  position: absolute;
+  bottom: 100%;
+}
+
+.testimonials-decoration {
+  width: 12.5vw;
+  height: 9.79vw;
+  position: absolute;
+  left: 7.5vw;
+}
+
+.testimonials-name {
+  font-size: 1.6vw;
+  line-height: 3vw;
+  font-family: "MaisonNeue-Bold";
+}
+
+.testimonials-company {
+  color: #9fa3a7;
+  margin-left: 5px;
+  font-size: 0.85vw;
+  letter-spacing: 2px;
+}
+
+.testimonials-comment {
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.testimonials-avatar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 10.73vw;
+  margin-right: 6.45vw;
+}
+
+.testimonials-avatar img {
+  height: 10.73vw;
+  width: auto;
+}
+
+.testimonials-coment-text {
+  font-family: "MaisonNeue-LightItalic";
+  font-size: 1.25vw;
+}
+
+.testimonials-caret {
+  position: absolute;
+  height: 1.82vw;
+  top: calc(50% - 0.91vw);
+}
+
+.testimonials-caret img {
+  height: 100%;
+  width: 100%;
+}
+
+.testimonials-caret-previous {
+  left: -17.86vw;
+}
+
+.testimonials-caret-next {
+  right: -10.42vw;
+}
+
+.testimonials-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+}
+
+.testimonials-slider--circle {
+  height: 13px;
+  width: 13px;
+  border: 2px solid #acacac;
+  border-radius: 999px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.testimonials-slider--circle:hover {
+  background-color: #acacac;
 }
 
 .map {

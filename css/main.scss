@@ -12,6 +12,12 @@ body{
     overflow-x: hidden;
 }
 
+button{
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+}
+
 //FONTS
 
 @font-face{
@@ -103,15 +109,10 @@ body{
     height: 13px;
     width: 13px;
     border: 2px solid #acacac;
-    border-radius: 25%;
+    border-radius: 999px;
   }
 
-
   // .grid, 
-<<<<<<< Updated upstream
-  // .testimonials, 
-=======
->>>>>>> Stashed changes
   .logos, .carousel, .map{
     display: none;
   }
@@ -120,7 +121,7 @@ body{
     width: 100vw;
     overflow: hidden;
     display: grid;
-    grid-template-rows: min-content calc(100vh - 70px) repear(6, auto);
+    grid-template-rows: min-content calc(100vh - 70px) repeat(6, auto);
     grid-template-columns: [margin-left]14.6vw [middle-content]auto 14.6vw;
     // grid-template-columns: [margin-left]minmax(40px, 14.6vw) [middle-content]auto minmax(40px, 14.6vw);
     position: relative;
@@ -138,7 +139,7 @@ body{
   @import "partials/header";
   @import "partials/txt";
   @import "partials/grid";
-
+  @import "partials/testimonials";
   @import "partials/map";
 
   @import "partials/footer";
