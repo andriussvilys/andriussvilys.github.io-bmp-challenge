@@ -41,9 +41,9 @@ body {
   overflow: hidden;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: min-content calc(100vh - 70px) 87vh auto;
-      grid-template-rows: -webkit-min-content calc(100vh - 70px) 87vh auto;
-      grid-template-rows: min-content calc(100vh - 70px) 87vh auto;
+  -ms-grid-rows: min-content calc(100vh - 70px) repear(6, auto);
+      grid-template-rows: -webkit-min-content calc(100vh - 70px) repear(6, auto);
+      grid-template-rows: min-content calc(100vh - 70px) repear(6, auto);
   -ms-grid-columns: [margin-left] 14.6vw [middle-content] auto 14.6vw;
       grid-template-columns: [margin-left] 14.6vw [middle-content] auto 14.6vw;
   position: relative;
@@ -54,6 +54,8 @@ body {
     -ms-grid-rows: min-content calc(100vh - 60px) 87vh auto;
         grid-template-rows: -webkit-min-content calc(100vh - 60px) 87vh auto;
         grid-template-rows: min-content calc(100vh - 60px) 87vh auto;
+    -ms-grid-columns: [margin-left] 13.125vw [middle-content] auto 13.125vw;
+        grid-template-columns: [margin-left] 13.125vw [middle-content] auto 13.125vw;
   }
 }
 
@@ -463,16 +465,19 @@ header {
   width: 100%;
   height: 100%;
   position: relative;
-  left: 0;
+  background-color: lime;
+  left: -100%;
   top: 0;
   position: absolute;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: -1;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
 }
 
 .header--cta:hover::before {
-  background-color: rgba(255, 255, 255, 0.2);
+  left: 0;
 }
 
 .kv {
@@ -678,21 +683,6 @@ header {
   }
 }
 
-.map {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 4;
-  -ms-grid-row: 4;
-      grid-row-start: 4;
-  grid-row-end: 5;
-  height: 70vh;
-  width: 100vw;
-}
-
-#map {
-  height: 100%;
-}
-
 .grid {
   width: 100vw;
   -ms-grid-row: 4;
@@ -761,9 +751,9 @@ header {
 }
 
 .grid-folio--gradient {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(8%, rgba(0, 0, 0, 0.892837)), color-stop(53%, rgba(0, 0, 0, 0)));
-  background: linear-gradient(360deg, rgba(0, 0, 0, 0.892837) 8%, rgba(0, 0, 0, 0) 53%);
-  opacity: 0.49;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(5%, rgba(0, 0, 0, 0.892837)), color-stop(69%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.892837) 5%, rgba(0, 0, 0, 0) 69%);
+  opacity: 0.65;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -801,6 +791,7 @@ header {
   z-index: 0;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
+  position: relative;
   overflow: hidden;
   color: #949494;
   border-color: #949494;
@@ -808,6 +799,32 @@ header {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -webkit-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.grid--cta::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: lime;
+  left: -100%;
+  top: 0;
+  position: absolute;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  z-index: -1;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+}
+
+.grid--cta:hover::before {
+  left: 0;
+}
+
+.grid--cta:hover {
+  color: #ffffff;
 }
 
 .grid-folio--info {
@@ -873,6 +890,129 @@ header {
   }
   .grid-folio--info__subheadline {
     font-size: 3vw;
+  }
+}
+
+.map {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  grid-row-end: 5;
+  height: 70vh;
+  width: 100vw;
+}
+
+#map {
+  height: 100%;
+}
+
+footer {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  -ms-grid-row: 8;
+      grid-row-start: 8;
+  grid-row-end: 9;
+  height: 282px;
+  font-family: "MaisonNeue-Book";
+  font-size: 14px;
+  position: relative;
+  padding: 48px 0px 43px 30px;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  left: -50%;
+  background-color: #fafafa;
+  z-index: -1;
+  top: 0;
+}
+
+.footer--address__bold {
+  font-family: "MaisonNeue-Bold";
+}
+
+.footer--address__regular
+, .footer--copyright {
+  color: #555555;
+}
+
+.footer-navigation {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 360px;
+}
+
+.footer-navigation-link {
+  width: 100px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.footer-navigation-link--text {
+  color: #000000;
+  position: relative;
+  text-decoration: none;
+  width: 100px;
+}
+
+.footer-navigation-link::before {
+  content: '';
+  height: 10px;
+  width: 100%;
+  background-color: #5ffd82;
+  position: absolute;
+  top: 9px;
+  left: -5px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  z-index: -1;
+}
+
+.footer-navigation
+, .footer--copyright {
+  position: absolute;
+  bottom: 43px;
+}
+
+.footer--copyright {
+  right: 0;
+}
+
+@media screen and (max-width: 1080px) {
+  footer {
+    height: 250px;
+    padding: 33px 0 43px 0;
+    font-size: 10px;
+    margin-left: -7px;
+  }
+  .footer-navigation
+, .footer--copyright {
+    position: absolute;
+    bottom: 78px;
+    width: 260px;
+  }
+  .footer-navigation-link {
+    width: 70px;
+  }
+  .footer-navigation-link::before {
+    height: 7px;
+    top: 7px;
+    left: -3px;
+  }
+  .footer--copyright {
+    bottom: 43px;
+    left: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */

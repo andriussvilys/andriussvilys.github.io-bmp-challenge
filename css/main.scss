@@ -79,10 +79,40 @@ body{
     cursor: pointer;
     z-index: 0;
     transition: background-color 0.4s;
+
+    position: relative;
+    overflow: hidden;
   }
 
+  @mixin cta-before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: lime;
+  left: -100%;
+  top: 0;
+  position: absolute;
+  transition: all 0.2s;
+  z-index: -1;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+  }
+
+  @mixin slider-circle{
+    height: 13px;
+    width: 13px;
+    border: 2px solid #acacac;
+    border-radius: 25%;
+  }
+
+
   // .grid, 
-  .testimonials, .logos, .carousel, .map{
+<<<<<<< Updated upstream
+  // .testimonials, 
+=======
+>>>>>>> Stashed changes
+  .logos, .carousel, .map{
     display: none;
   }
 
@@ -90,7 +120,7 @@ body{
     width: 100vw;
     overflow: hidden;
     display: grid;
-    grid-template-rows: min-content calc(100vh - 70px) 87vh auto;
+    grid-template-rows: min-content calc(100vh - 70px) repear(6, auto);
     grid-template-columns: [margin-left]14.6vw [middle-content]auto 14.6vw;
     // grid-template-columns: [margin-left]minmax(40px, 14.6vw) [middle-content]auto minmax(40px, 14.6vw);
     position: relative;
@@ -100,11 +130,15 @@ body{
    screen and (max-height: 786px){
       .wrapper{    
         grid-template-rows: min-content calc(100vh - 60px) 87vh auto;
+        grid-template-columns: [margin-left]13.125vw [middle-content]auto 13.125vw;
         }
     }
 
   @import "partials/nav";
   @import "partials/header";
   @import "partials/txt";
-  @import "partials/map";
   @import "partials/grid";
+
+  @import "partials/map";
+
+  @import "partials/footer";
