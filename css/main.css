@@ -701,19 +701,12 @@ header {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 4;
-  position: relative;
 }
 
 .gallery {
   width: 100%;
   height: 50vw;
   position: relative;
-}
-
-.grid-small-folio-wrapper {
-  height: 100%;
-  width: 25%;
-  position: absolute;
 }
 
 .grid-folio-main {
@@ -726,12 +719,8 @@ header {
   position: absolute;
   right: 0;
   top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   height: 100%;
+  width: 25%;
 }
 
 .grid-small-folio-wrapper--column__1 {
@@ -739,35 +728,13 @@ header {
 }
 
 .grid-folio {
+  cursor: pointer;
   position: relative;
   width: 100%;
   height: 50%;
   overflow: hidden;
   z-index: 1;
   background-color: lime;
-}
-
-.grid-folio__large {
-  height: 100%;
-  width: 50%;
-}
-
-.grid-folio::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background-color: #00d830;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  opacity: 0.7;
-  mix-blend-mode: multiply;
-}
-
-.grid-folio:hover .grid-folio::before {
-  left: 0;
 }
 
 .grid-folio--gradient {
@@ -780,9 +747,59 @@ header {
 }
 
 .grid-folio--photo {
-  width: 100%;
   position: absolute;
+  width: 100%;
   height: 100%;
+}
+
+.hover-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: lime;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.hover-area:hover {
+  opacity: 0.7;
+}
+
+.grid--cta-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 19.3vh;
+}
+
+.grid--cta {
+  border: 2px solid #fafafa;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0);
+  color: #fafafa;
+  font-family: "MaisonNeue-Bold";
+  text-transform: uppercase;
+  font-size: 1em;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+  display: inline-block;
+  padding: 1.05em 2.7em;
+  cursor: pointer;
+  z-index: 0;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  overflow: hidden;
+  color: #949494;
+  border-color: #949494;
+  margin: 0 auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .grid-folio--info {
@@ -790,9 +807,7 @@ header {
   position: absolute;
   bottom: 0;
   padding: 0 4.17vw 4.26vh 2.29vw;
-  cursor: pointer;
   z-index: 2;
-  pointer-events: none;
 }
 
 .grid-folio--info a {
@@ -816,21 +831,6 @@ header {
   font-size: 1.3vw;
 }
 
-.hover-area {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 2;
-  background-color: lime;
-  opacity: 0;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-}
-
-.hover-area:hover {
-  opacity: 0.7;
-}
-
 @media screen and (max-width: 468px) {
   .gallery {
     height: 300vw;
@@ -839,7 +839,7 @@ header {
     transition: height 0.6s;
   }
   .grid-small-folio-wrapper, .grid-folio-main {
-    height: 100%;
+    height: 100vw;
     width: 100%;
   }
   .grid-small-folio-wrapper {
