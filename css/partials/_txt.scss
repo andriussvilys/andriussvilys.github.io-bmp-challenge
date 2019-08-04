@@ -1,7 +1,7 @@
 .txt{
     grid-row-start: 3;
     grid-row-end: 4;
-    height: 87vh;
+    height: 87vmin;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -27,7 +27,7 @@
 @media screen and (max-width: 468px){
     .txt{
         padding: 17.1vh 0 17.7vh 0;
-        flex-direction: column;
+        // flex-direction: column;
     }
     .txt-headline{
         font-family: "MaisonNeue-Bold";
