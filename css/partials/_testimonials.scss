@@ -41,20 +41,29 @@
     width: 49.0625vw;
     // border: 1px solid;
     position: relative;
+    border: 1px solid;
 }
 //**************************************
 
 .testimonials-content--name-box{
-    margin-left: 17.18vw;
+    margin-left: 7.18vw;
     margin-bottom: 17px;
-    position: absolute;
-    bottom: 100%;
+    position: relative;
+    // bottom: 100%;
+    border: 1px solid;
+    height: 9.79vw;
 }
     .testimonials-decoration{
         width: 12.5vw;
         height: 9.79vw;
         position: absolute;
-        left: 7.5vw;
+        // left: 7.5vw;
+        z-index: -1;
+    }
+    .testimonials-content--name-box-client-detail{
+        margin-left: 10vw;
+        margin-top: 7vw;
+        
     }
     .testimonials-name{
         font-size: 1.6vw;
@@ -74,7 +83,7 @@
     bottom: 0;
     display: flex;
     align-items: center;
-    // border: 1px solid red;
+    border: 1px solid red;
 }
     .testimonials-avatar{
         flex: 1;
@@ -120,3 +129,12 @@ right: -10.42vw;
     background-color: #acacac;
 }
 
+@media screen and (max-width: 768px){
+    .testimonials{
+        height: 648px;
+        border: 1px solid;
+    }
+    .testimonials-caret{
+        display: none;
+    }
+}

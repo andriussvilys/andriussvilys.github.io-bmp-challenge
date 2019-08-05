@@ -121,7 +121,8 @@ button{
     width: 100vw;
     overflow: hidden;
     display: grid;
-    grid-template-rows: min-content calc(100vh - 70px) repeat(6, auto);
+    grid-template-rows: [nav]min-content [haeder]calc(100vh - 70px) [txt]auto [grid]auto [testimonials]auto [logos]auto [map]auto [footer]auto;
+    // -ms-grid-rows: unquote("min-content calc(100vh - 70px) (auto)[6]");
     grid-template-columns: [margin-left]14.6vw [middle-content]auto 14.6vw;
     // grid-template-columns: [margin-left]minmax(40px, 14.6vw) [middle-content]auto minmax(40px, 14.6vw);
     position: relative;

@@ -47,9 +47,9 @@ button {
   overflow: hidden;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: min-content calc(100vh - 70px) (auto)[6];
-      grid-template-rows: -webkit-min-content calc(100vh - 70px) repeat(6, auto);
-      grid-template-rows: min-content calc(100vh - 70px) repeat(6, auto);
+  -ms-grid-rows: [nav] min-content [haeder] calc(100vh - 70px) [txt] auto [grid] auto [testimonials] auto [logos] auto [map] auto [footer] auto;
+      grid-template-rows: [nav] -webkit-min-content [haeder] calc(100vh - 70px) [txt] auto [grid] auto [testimonials] auto [logos] auto [map] auto [footer] auto;
+      grid-template-rows: [nav] min-content [haeder] calc(100vh - 70px) [txt] auto [grid] auto [testimonials] auto [logos] auto [map] auto [footer] auto;
   -ms-grid-columns: [margin-left] 14.6vw [middle-content] auto 14.6vw;
       grid-template-columns: [margin-left] 14.6vw [middle-content] auto 14.6vw;
   position: relative;
@@ -946,20 +946,27 @@ header {
   height: 22.66vw;
   width: 49.0625vw;
   position: relative;
+  border: 1px solid;
 }
 
 .testimonials-content--name-box {
-  margin-left: 17.18vw;
+  margin-left: 7.18vw;
   margin-bottom: 17px;
-  position: absolute;
-  bottom: 100%;
+  position: relative;
+  border: 1px solid;
+  height: 9.79vw;
 }
 
 .testimonials-decoration {
   width: 12.5vw;
   height: 9.79vw;
   position: absolute;
-  left: 7.5vw;
+  z-index: -1;
+}
+
+.testimonials-content--name-box-client-detail {
+  margin-left: 10vw;
+  margin-top: 7vw;
 }
 
 .testimonials-name {
@@ -984,6 +991,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 1px solid red;
 }
 
 .testimonials-avatar {
@@ -1041,6 +1049,16 @@ header {
 
 .testimonials-slider--circle:hover {
   background-color: #acacac;
+}
+
+@media screen and (max-width: 768px) {
+  .testimonials {
+    height: 648px;
+    border: 1px solid;
+  }
+  .testimonials-caret {
+    display: none;
+  }
 }
 
 .map {
