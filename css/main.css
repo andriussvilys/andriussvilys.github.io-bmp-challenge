@@ -927,6 +927,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .testimonials-header--text {
@@ -946,20 +949,20 @@ header {
   height: 22.66vw;
   width: 49.0625vw;
   position: relative;
-  border: 1px solid;
 }
 
 .testimonials-content--name-box {
   margin-left: 7.18vw;
   margin-bottom: 17px;
-  position: relative;
-  border: 1px solid;
+  position: absolute;
+  width: 12.5vw;
   height: 9.79vw;
+  white-space: nowrap;
 }
 
 .testimonials-decoration {
-  width: 12.5vw;
-  height: 9.79vw;
+  height: 100%;
+  widows: 100%;
   position: absolute;
   z-index: -1;
 }
@@ -991,7 +994,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid red;
 }
 
 .testimonials-avatar {
@@ -1054,10 +1056,68 @@ header {
 @media screen and (max-width: 768px) {
   .testimonials {
     height: 648px;
-    border: 1px solid;
+    min-width: 240px;
+    margin: 0 auto;
+  }
+  .testimonials-header {
+    height: 130px;
+    top: 0;
+  }
+  .testimonials-header--dash {
+    width: 20px;
+    margin-right: 20px;
+  }
+  .testimonials-header--text {
+    font-size: 12px;
+  }
+  .testimonials-content {
+    width: 100%;
+    top: 130px;
+    position: absolute;
+  }
+  .testimonials-content--name-box {
+    margin-left: 0;
+    width: 185px;
+    height: 143px;
+  }
+  .testimonials-content--name-box-client-detail {
+    margin-left: 120px;
+    margin-top: 112px;
+  }
+  .testimonials-name {
+    font-size: 20px;
+    line-height: initial;
+    margin-bottom: 5px;
+  }
+  .testimonials-company {
+    font-size: 9px;
+  }
+  .testimonials-comment {
+    bottom: initial;
+    top: 123px;
+    display: initial;
+  }
+  .testimonials-avatar {
+    width: 96px;
+    height: 96px;
+    margin-left: 10px;
+    margin-bottom: 22px;
+  }
+  .testimonials-avatar img {
+    height: 100%;
+  }
+  .testimonials-coment-text {
+    font-size: 14px;
   }
   .testimonials-caret {
     display: none;
+  }
+  .testimonials-slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    bottom: 77px;
+    position: absolute;
   }
 }
 
