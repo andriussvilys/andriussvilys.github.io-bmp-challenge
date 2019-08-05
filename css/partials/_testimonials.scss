@@ -221,7 +221,10 @@ right: -10.42vw;
     margin-top: 35vw;
     }
     .testimonials-slider{
+        position: initial;
         bottom: 24.01vw;
+        margin-left: calc(50% - 28px);
+        margin-top: 60px;
     }
     .testimonials-name{
         font-size: 7vw;
