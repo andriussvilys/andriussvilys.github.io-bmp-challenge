@@ -1055,6 +1055,9 @@ header {
 
 @media screen and (max-width: 768px) {
   .testimonials {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 4;
     height: 648px;
     min-width: 240px;
     margin: 0 auto;
@@ -1118,6 +1121,42 @@ header {
     display: flex;
     bottom: 77px;
     position: absolute;
+  }
+  .testimonials {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 3;
+    margin: initial;
+    height: calc(114.6875vw + 130px + 13px + 130px);
+  }
+  .testimonials-decoration {
+    width: 57.5vw;
+    height: 45vw;
+  }
+  .testimonials-avatar {
+    width: 30vw;
+    height: 30vw;
+    margin-left: 3.125vw;
+    margin-bottom: 6.875vw;
+  }
+  .testimonials-comment {
+    top: 38.738vw;
+  }
+  .testimonials-content--name-box-client-detail {
+    margin-left: 37.5vw;
+    margin-top: 35vw;
+  }
+  .testimonials-slider {
+    bottom: 24.01vw;
+  }
+  .testimonials-name {
+    font-size: 7vw;
+  }
+  .testimonials-company {
+    font-size: 3.3vw;
+  }
+  .testimonials-coment-text {
+    font-size: 4.9vw;
   }
 }
 
