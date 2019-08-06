@@ -916,7 +916,10 @@ header {
   font-family: "MaisonNeue-Bold";
 }
 
-.testimonials-header {
+.testimonials-headline {
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-family: "MaisonNeue-Bold";
   position: absolute;
   left: 0;
   top: 3.29vw;
@@ -926,19 +929,20 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.testimonials-header--text {
   color: #9d9d9d;
-  font-size: 16px;
 }
 
-.testimonials-header--dash {
+.testimonials-headline--text {
+  font-size: 1vw;
+}
+
+.testimonials-headline--dash {
   background-color: #9d9d9d;
   height: 2px;
-  width: 27px;
+  width: 1.406vw;
   margin: auto 0;
-  margin-right: 32px;
+  margin-right: 1.67vw;
+  min-width: 20px;
 }
 
 .testimonials-content {
@@ -1036,16 +1040,16 @@ header {
   display: none;
 }
 
-.testimonials-slider--circle {
+.testimonials-slider--bullet {
   height: 13px;
   width: 13px;
   border: 2px solid #acacac;
-  border-radius: 999px;
   margin: 0 4px;
+  border-radius: 999px;
   cursor: pointer;
 }
 
-.testimonials-slider--circle:hover {
+.testimonials-slider--bullet:hover {
   background-color: #acacac;
 }
 
@@ -1058,15 +1062,15 @@ header {
     min-width: 240px;
     margin: 0 auto;
   }
-  .testimonials-header {
+  .testimonials-headline {
     height: 130px;
     top: 0;
   }
-  .testimonials-header--dash {
+  .testimonials-headline--dash {
     width: 20px;
     margin-right: 20px;
   }
-  .testimonials-header--text {
+  .testimonials-headline--text {
     font-size: 12px;
   }
   .testimonials-content {
@@ -1125,6 +1129,9 @@ header {
     margin: initial;
     height: calc(114.6875vw + 130px + 13px + 130px);
   }
+  .testimonials-headline--text {
+    font-size: 3.91vw;
+  }
   .testimonials-decoration {
     width: 57.5vw;
     height: 45vw;
@@ -1159,6 +1166,179 @@ header {
   }
   .testimonials-header--text {
     font-size: 4vw;
+  }
+}
+
+.carousel {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-grid-row: 6;
+      grid-row-start: 6;
+  grid-row-end: 7;
+  height: 77.395vw;
+  background-color: #100f0f;
+  position: relative;
+}
+
+.carousel-headline {
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-family: "MaisonNeue-Bold";
+  position: absolute;
+  left: 0;
+  top: 3.29vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #9d9d9d;
+  margin-left: 14.6vw;
+  height: 18.02vw;
+  top: initial;
+}
+
+.carousel-headline--text {
+  font-size: 1vw;
+}
+
+.carousel-headline--dash {
+  background-color: #9d9d9d;
+  height: 2px;
+  width: 1.406vw;
+  margin: auto 0;
+  margin-right: 1.67vw;
+  min-width: 20px;
+}
+
+.carousel-logos {
+  position: relative;
+  width: 67.396vw;
+  height: 32.24vw;
+  margin: 18.02vw 14.6vw 0 14.6vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 13.75vw;
+}
+
+.carousel-slider {
+  position: absolute;
+  bottom: 0;
+  height: 13.75vw;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carousel-slider--bullet__mobile {
+  height: 13px;
+  width: 13px;
+  border: 2px solid #acacac;
+  margin: 0 4px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: none;
+}
+
+.carousel-slider--bullet {
+  height: 13px;
+  width: 13px;
+  border: 2px solid #acacac;
+  margin: 0 4px;
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 0 12px;
+  height: 15px;
+  width: 15px;
+}
+
+.carousel-slider--bullet:hover {
+  background-color: #acacac;
+}
+
+.carousel-photos {
+  height: 25.3125vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel-photos-image {
+  height: 100%;
+  margin-right: 0.78vw;
+}
+
+.carousel-logos--column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  max-width: 13.44vw;
+}
+
+.carousel-logos-image {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    height: 226.5625vw;
+  }
+  .carousel-headline {
+    height: 70vw;
+  }
+  .carousel-headline--text {
+    font-size: 3.91vw;
+  }
+  .carousel-logos {
+    width: 50vw;
+    height: 105.93vw;
+    margin: 70vw 25vw 0 25vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 50.93vw;
+  }
+  .carousel-logos--column {
+    width: 100vw;
+  }
+  .carousel-slider {
+    height: 50.93vw;
+  }
+  .carousel-slider--bullet__mobile {
+    display: initial;
+  }
+  .carousel-slider--bullet {
+    height: 13px;
+    width: 13px;
+    margin: 0 8px;
+    display: initial;
+  }
+  .carousel-photos {
+    height: 50vw;
   }
 }
 

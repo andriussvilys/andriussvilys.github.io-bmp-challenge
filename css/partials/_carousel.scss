@@ -1,0 +1,115 @@
+.carousel{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    height: 77.395vw;
+    background-color: #100f0f;
+    position: relative;
+}
+
+$headline-height: 18.02vw;
+
+.carousel-headline{
+    @include headline;
+    margin-left: 14.6vw;
+    height: $headline-height;
+    top: initial;
+}
+.carousel-headline--text{
+    @include headline--text;
+}
+.carousel-headline--dash{
+    @include headline--dash;
+}
+.carousel-logos{
+    position: relative;
+    width: 67.396vw;
+    height: 32.24vw;
+    margin: $headline-height 14.6vw 0 14.6vw;
+    // border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 13.75vw;
+}
+.carousel-slider{
+    position: absolute;
+    bottom: 0;
+    height: 13.75vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-slider--bullet__mobile{
+    @include slider-bullet;
+    display: none;
+}
+.carousel-slider--bullet{
+    @include slider-bullet;
+    margin: 0 12px;
+    height: 15px;
+    width: 15px;
+}
+.carousel-slider--bullet:hover{
+    background-color: #acacac;
+}
+.carousel-photos{
+    height: 25.3125vw;
+    display: flex;
+}
+.carousel-photos-image{
+ height: 100%;
+ margin-right: 0.78vw;
+}
+
+.carousel-logos--column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 13.44vw;
+}
+.carousel-logos-image{
+width: 100%;
+}
+
+@media screen and (max-width: 768px){
+    .carousel{
+        height: 226.5625vw;
+    }
+    .carousel-headline{
+        height: 70vw;
+    }
+    .carousel-headline--text{
+        @include headline-mobile;
+    }
+    .carousel-logos{
+        width: 50vw;
+        height: 105.93vw;
+        margin: 70vw 25vw 0 25vw;
+        // border: 1px solid white;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50.93vw;
+    }
+    .carousel-logos--column{
+        width: 100vw;
+    }
+    .carousel-slider{
+        height: 50.93vw;
+    }
+    .carousel-slider--bullet__mobile{
+        display: initial;
+    }
+    .carousel-slider--bullet{
+        height: 13px;
+        width: 13px;
+        margin: 0 8px;
+        display: initial;
+    }
+    .carousel-photos{
+        height: 50vw;
+    }
+
+}

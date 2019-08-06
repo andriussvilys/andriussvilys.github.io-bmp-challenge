@@ -19,27 +19,15 @@
 }
 
 //HEADER
-.testimonials-header{
-    // position: absolute;
-    // left: 0;
-    // top: 3.29vw;
-    // display:flex;
-    // align-items: center;
-    @include header;
+.testimonials-headline{
+    @include headline;
 }
-.testimonials-header--text{
-    // color: #9d9d9d;
-    // font-size: 16px;
-    @include header--test;
+.testimonials-headline--text{
+    @include headline--text;
 
 }
-.testimonials-header--dash{
-    // background-color: #9d9d9d;
-    // height: 2px;
-    // width: 27px;
-    // margin: auto 0;
-    // margin-right: 32px;
-    @include header--dash;
+.testimonials-headline--dash{
+    @include headline--dash;
 }
 .testimonials-content{
     height: 22.66vw;
@@ -127,12 +115,10 @@ right: -10.42vw;
     display: flex;
     display: none;
 }
-.testimonials-slider--circle{
-    @include slider-circle;
-    margin: 0 4px;
-    cursor: pointer;
+.testimonials-slider--bullet{
+    @include slider-bullet;
 }
-.testimonials-slider--circle:hover{
+.testimonials-slider--bullet:hover{
     background-color: #acacac;
 }
 
@@ -145,16 +131,16 @@ right: -10.42vw;
         min-width: 240px;
         margin: 0 auto;
     }
-    .testimonials-header{
+    .testimonials-headline{
         height: 130px;
         top: 0;
         // border: 1px solid blue;
     }
-    .testimonials-header--dash{
+    .testimonials-headline--dash{
         width: 20px;
         margin-right: 20px;
     }
-    .testimonials-header--text{
+    .testimonials-headline--text{
         font-size: 12px;
     }
     .testimonials-content{
@@ -198,8 +184,8 @@ right: -10.42vw;
         .testimonials-coment-text{
             font-size: 14px;
         }
-        .testimonials-decoration{
-        }
+        // .testimonials-decoration{
+        // }
 
     .testimonials-caret{
         display: none;
@@ -215,6 +201,9 @@ right: -10.42vw;
         grid-column-end: 3;
         margin: initial;
         height: calc(114.6875vw + 130px + 13px + 130px);
+    }
+    .testimonials-headline--text{
+        @include headline-mobile;
     }
     .testimonials-decoration	{width: 57.5vw; height: 45vw}
 .testimonials-avatar	{width: 30vw; height: 30vw; margin-left: 3.125vw;  margin-bottom: 6.875vw}
