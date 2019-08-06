@@ -20,23 +20,26 @@
 
 //HEADER
 .testimonials-header{
-    position: absolute;
-    // top: 0;
-    left: 0;
-    top: 3.29vw;
-    display:flex;
-    align-items: center;
+    // position: absolute;
+    // left: 0;
+    // top: 3.29vw;
+    // display:flex;
+    // align-items: center;
+    @include header;
 }
 .testimonials-header--text{
-    color: #9d9d9d;
-    font-size: 16px;
+    // color: #9d9d9d;
+    // font-size: 16px;
+    @include header--test;
+
 }
 .testimonials-header--dash{
-    background-color: #9d9d9d;
-    height: 2px;
-    width: 27px;
-    margin: auto 0;
-    margin-right: 32px;
+    // background-color: #9d9d9d;
+    // height: 2px;
+    // width: 27px;
+    // margin: auto 0;
+    // margin-right: 32px;
+    @include header--dash;
 }
 .testimonials-content{
     height: 22.66vw;
