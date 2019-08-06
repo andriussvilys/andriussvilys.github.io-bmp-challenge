@@ -4,6 +4,7 @@
     grid-row-start: 6;
     grid-row-end: 7;
     height: 77.395vw;
+    width: 100vw;
     background-color: #100f0f;
     position: relative;
 }
@@ -27,7 +28,7 @@ $headline-height: 18.02vw;
     width: 67.396vw;
     height: 32.24vw;
     margin: $headline-height 14.6vw 0 14.6vw;
-    // border: 1px solid white;
+    border: 1px solid white;
     display: flex;
     justify-content: space-between;
     padding-bottom: 13.75vw;

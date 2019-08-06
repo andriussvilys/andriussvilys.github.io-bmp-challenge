@@ -1177,6 +1177,7 @@ header {
       grid-row-start: 6;
   grid-row-end: 7;
   height: 77.395vw;
+  width: 100vw;
   background-color: #100f0f;
   position: relative;
 }
@@ -1218,6 +1219,7 @@ header {
   width: 67.396vw;
   height: 32.24vw;
   margin: 18.02vw 14.6vw 0 14.6vw;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1346,9 +1348,9 @@ header {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 4;
-  -ms-grid-row: 4;
-      grid-row-start: 4;
-  grid-row-end: 5;
+  -ms-grid-row: 7;
+      grid-row-start: 7;
+  grid-row-end: 8;
   height: 70vh;
   width: 100vw;
 }
