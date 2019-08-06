@@ -38,10 +38,6 @@ button {
   src: url("../assets/fonts/MaisonNeueTRIAL-Bold.otf") format("opentype");
 }
 
-.logos, .carousel, .map {
-  display: none;
-}
-
 .wrapper {
   width: 100vw;
   overflow: hidden;
