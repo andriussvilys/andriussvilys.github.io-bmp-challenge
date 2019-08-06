@@ -1161,6 +1161,9 @@ header {
   .testimonials-coment-text {
     font-size: 4.9vw;
   }
+  .testimonials-header--text {
+    font-size: 4vw;
+  }
 }
 
 .map {
