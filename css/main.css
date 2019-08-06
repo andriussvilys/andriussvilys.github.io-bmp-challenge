@@ -1220,18 +1220,51 @@ header {
   height: 32.24vw;
   margin: 18.02vw 14.6vw 0 14.6vw;
   border: 1px solid white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 13.75vw;
+  overflow: hidden;
+}
+
+.logos-wrapper {
+  height: 18.49vw;
+  width: 150%;
+  position: absolute;
+  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-bottom: 13.75vw;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.carousel-logos--column {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  max-width: 13.44vw;
+}
+
+.carousel-logos-image {
+  width: 100%;
 }
 
 .carousel-slider {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  top: 18.49vw;
   height: 13.75vw;
   width: 100%;
   display: -webkit-box;
@@ -1283,25 +1316,6 @@ header {
   margin-right: 0.78vw;
 }
 
-.carousel-logos--column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 100%;
-  max-width: 13.44vw;
-}
-
-.carousel-logos-image {
-  width: 100%;
-}
-
 @media screen and (max-width: 768px) {
   .carousel {
     height: 226.5625vw;
@@ -1323,6 +1337,12 @@ header {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding-bottom: 50.93vw;
+    position: relative;
+  }
+  .logos-wrapper {
+    height: 55vw;
+    widows: 600%;
+    position: absolute;
   }
   .carousel-logos--column {
     width: 100vw;
