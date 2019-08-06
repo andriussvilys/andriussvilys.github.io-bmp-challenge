@@ -1219,7 +1219,6 @@ header {
   width: 67.396vw;
   height: 32.24vw;
   margin: 18.02vw 14.6vw 0 14.6vw;
-  border: 1px solid white;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1231,7 +1230,6 @@ header {
   height: 18.49vw;
   width: 150%;
   position: absolute;
-  border: 1px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1258,8 +1256,32 @@ header {
   max-width: 13.44vw;
 }
 
+.carousel-logos--column {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .carousel-logos-image {
-  width: 100%;
+  max-height: 4.79vw;
+  max-width: 100%;
+  width: auto;
+  position: absolute;
+}
+
+.carousel-logos-image__top {
+  top: 0;
+}
+
+.carousel-logos-image__bottom {
+  bottom: 0;
 }
 
 .carousel-slider {
@@ -1321,7 +1343,7 @@ header {
     height: 226.5625vw;
   }
   .carousel-headline {
-    height: 70vw;
+    height: 65.62vw;
   }
   .carousel-headline--text {
     font-size: 3.91vw;
@@ -1329,7 +1351,7 @@ header {
   .carousel-logos {
     width: 50vw;
     height: 105.93vw;
-    margin: 70vw 25vw 0 25vw;
+    margin: 65.62vw 25vw 0 25vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1341,14 +1363,25 @@ header {
   }
   .logos-wrapper {
     height: 55vw;
-    widows: 600%;
+    width: 600%;
     position: absolute;
+    left: -100%;
   }
   .carousel-logos--column {
-    width: 100vw;
+    max-width: none;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .carousel-slider {
-    height: 50.93vw;
+  .carousel-logos-image {
+    max-height: 19.69vw;
   }
   .carousel-slider--bullet__mobile {
     display: initial;
@@ -1356,8 +1389,15 @@ header {
   .carousel-slider--bullet {
     height: 13px;
     width: 13px;
-    margin: 0 8px;
+    margin: 0 8px 0 0;
     display: initial;
+  }
+  .carousel-slider {
+    height: 50.93vw;
+    top: 55vw;
+  }
+  .carousel-slider div:last-child {
+    margin: 0;
   }
   .carousel-photos {
     height: 50vw;
