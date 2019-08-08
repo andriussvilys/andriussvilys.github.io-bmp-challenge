@@ -92,9 +92,19 @@ $logos-wrapper-desktop-height: 18.49vw;
     margin: 0 12px;
     height: 15px;
     width: 15px;
+    z-index: 5;
 }
-.carousel-slider--bullet:hover{
-    background-color: #acacac;
+// .carousel-slider--bullet:hover{
+//     background-color: #acacac;
+// }
+#carousel-slider--bullet_1{
+    // background-color:  #acacac;
+}
+#carousel-slider--bullet_2:hover .logos-wrapper{
+    left: -50%;
+}
+.bullet__full{
+    background-color:  #acacac;
 }
 //PHOTOS******************************************
 .carousel-photos{

@@ -117,6 +117,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 })({"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
@@ -13966,16 +13971,105 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     slidesToScroll: 2
   });
 });
+<<<<<<< Updated upstream
+=======
+=======
+})({"javascript/index.js":[function(require,module,exports) {
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 var links = document.getElementById('links');
 var hamburger = document.getElementById('hamburger');
 hamburger.addEventListener('click', function () {
   links.classList.toggle('menu-links-container__display-on');
 }); // function hamburgerClick(hamburger){
+<<<<<<< Updated upstream
+=======
+=======
+})({"javascript/index.js":[function(require,module,exports) {
+// $('.logos-wrapper').slick({
+//     infinite: true,
+//     slidesToShow: 3,
+//     slidesToScroll: 3
+//   });
+var links = document.getElementById('links');
+var hamburger = document.getElementById('hamburger');
+hamburger.addEventListener('click', function () {
+  links.classList.toggle('menu-links-container__display-on');
+});
+var bullet2 = document.getElementById('carousel-slider--bullet_2');
+var logosWrapper = document.querySelector(".logos-wrapper");
+bullet2.addEventListener('onmouseover', function () {
+  alert('hi');
+});
+
+function filterBullet(currentBullet) {
+  var filtered = Array.from($('.carousel-slider--bullet')).filter(function (item) {
+    return item.id !== currentBullet;
+  });
+  filtered.forEach(function (item) {
+    return item.classList.remove('bullet__full');
+  });
+  return filtered;
+}
+
+var moveLeftDesktop = [0, 25, 50];
+var moveLeftMobile = [0, 100, 200, 300, 400, 500];
+
+var carouselBullets = function carouselBullets() {
+  Array.from($('.carousel-slider--bullet')).forEach(function (bullet, index) {
+    $(bullet).mouseover(function () {
+      $("#".concat(bullet.id)).addClass('bullet__full');
+
+      if ($(document).width() > 768) {
+        $(logosWrapper).css('left', "-".concat(moveLeftDesktop[index], "%"));
+      } else $(logosWrapper).css('left', "-".concat(moveLeftMobile[index], "%"));
+
+      filterBullet(bullet.id);
+    });
+  });
+};
+
+carouselBullets();
+$(window).resize(function () {
+  var firstBullet = $('.carousel-slider--bullet')[0];
+  filterBullet(firstBullet);
+  $(logosWrapper).css('left', "0");
+  $(firstBullet).addClass('bullet__full');
+  carouselBullets();
+}); // $(bullet2).mouseover(function(){
+//     $(logosWrapper).css('left', '-25%');
+//     $('#carousel-slider--bullet_2').addClass('bullet__full');
+//     filterBullet('carousel-slider--bullet_2');
+// })
+// $('#carousel-slider--bullet_3').mouseover(function(){
+//     $(logosWrapper).css('left', '-50%');
+//     $('#carousel-slider--bullet_3').addClass('bullet__full');
+// })
+// $('#carousel-slider--bullet_1').mouseover(function(){
+//     $(logosWrapper).css('left', '0');
+//     $('#carousel-slider--bullet_1').addClass('bullet__full');
+// })
+// bullet2.addEventListener('onmouseover', ()=>{logosWrapper.style = {left: "-50%"}})
+// function hamburgerClick(hamburger){
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 //     hamburger.addEventListener('click', ()=>{
 //         links.classList.toggle('menu-links-container__display-on')
 //     })
 // }
+<<<<<<< Updated upstream
 },{"jquery":"node_modules/jquery/dist/jquery.js","slick-carousel":"node_modules/slick-carousel/slick/slick.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+},{"jquery":"node_modules/jquery/dist/jquery.js","slick-carousel":"node_modules/slick-carousel/slick/slick.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+=======
+},{}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+>>>>>>> Stashed changes
+=======
+},{}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

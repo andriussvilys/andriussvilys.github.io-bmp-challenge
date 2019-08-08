@@ -10,7 +10,17 @@ body {
   width: 100vw;
   height: 100%;
   overflow-x: hidden;
+<<<<<<< Updated upstream
   scroll-behavior: smooth;
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  scroll-behavior: smooth;
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
 
 button {
@@ -21,22 +31,54 @@ button {
 
 @font-face {
   font-family: "MaisonNeue-Book";
+<<<<<<< Updated upstream
   src: url("/MaisonNeueTRIAL-Book.848f8e8c.otf") format("opentype");
+=======
+<<<<<<< Updated upstream
+  src: url("/MaisonNeueTRIAL-Book.848f8e8c.otf") format("opentype");
+=======
+  src: url("/ee2e450750fb574fb0b58e81848f8e8c.otf") format("opentype");
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
 
 @font-face {
   font-family: "MaisonNeue-BookItalic";
+<<<<<<< Updated upstream
   src: url("/MaisonNeueTRIAL-BookItalic.836d9b90.otf") format("opentype");
+=======
+<<<<<<< Updated upstream
+  src: url("/MaisonNeueTRIAL-BookItalic.836d9b90.otf") format("opentype");
+=======
+  src: url("/df54bc3df28d4f3a876d41cd836d9b90.otf") format("opentype");
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
 
 @font-face {
   font-family: "MaisonNeue-LightItalic";
+<<<<<<< Updated upstream
   src: url("/MaisonNeueTRIAL-LightItalic.94ce62f2.otf") format("opentype");
+=======
+<<<<<<< Updated upstream
+  src: url("/MaisonNeueTRIAL-LightItalic.94ce62f2.otf") format("opentype");
+=======
+  src: url("/a6b05504958fb4452f499afc94ce62f2.otf") format("opentype");
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
 
 @font-face {
   font-family: "MaisonNeue-Bold";
+<<<<<<< Updated upstream
   src: url("/MaisonNeueTRIAL-Bold.d30c29cf.otf") format("opentype");
+=======
+<<<<<<< Updated upstream
+  src: url("/MaisonNeueTRIAL-Bold.d30c29cf.otf") format("opentype");
+=======
+  src: url("/a06b91aebeb923f19df55608d30c29cf.otf") format("opentype");
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
 
 .wrapper {
@@ -1321,9 +1363,26 @@ header {
   margin: 0 12px;
   height: 15px;
   width: 15px;
+<<<<<<< Updated upstream
 }
 
 .carousel-slider--bullet:hover {
+=======
+<<<<<<< Updated upstream
+}
+
+.carousel-slider--bullet:hover {
+=======
+  z-index: 5;
+}
+
+#carousel-slider--bullet_2:hover .logos-wrapper {
+  left: -50%;
+}
+
+.bullet__full {
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   background-color: #acacac;
 }
 
