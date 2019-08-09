@@ -567,6 +567,7 @@ header {
   width: 100%;
   height: 50vw;
   position: relative;
+  overflow: hidden;
 }
 
 .grid-folio-main {
@@ -585,6 +586,11 @@ header {
 
 .grid-small-folio-wrapper--column__1 {
   right: 25%;
+}
+
+.grid-extra {
+  z-index: 2;
+  right: -50%;
 }
 
 .grid-folio {
@@ -609,14 +615,9 @@ header {
   background-color: #00d830;
   position: absolute;
   top: 0;
-  left: -100%;
-  transition: all 0.2s;
+  transition: all 1.5s;
   z-index: 1;
-  opacity: 0.7;
-}
-
-.grid-folio:hover::before {
-  left: 0;
+  opacity: 0;
 }
 
 .grid-folio--gradient {
@@ -631,6 +632,16 @@ header {
   position: absolute;
   width: 100%;
   height: 100%;
+  transition-timing-function: ease-in;
+  transition: 1.5s;
+}
+
+.grid-folio:hover::before {
+  opacity: 0.7;
+}
+
+.grid-folio:hover .grid-folio--photo {
+  transform: scale(1.25);
 }
 
 .grid--cta-wrapper {
@@ -722,6 +733,7 @@ header {
   .grid-small-folio-wrapper, .grid-folio-main {
     height: 100vw;
     width: 100%;
+    transition: all 0.2s;
   }
 
   .grid-small-folio-wrapper {
@@ -753,6 +765,21 @@ header {
 
   .grid-folio--info__subheadline {
     font-size: 3vw;
+  }
+
+  #grid-extra__2 {
+    right: initial;
+    top: 500vw;
+  }
+
+  #grid-extra__1 {
+    right: initial !important;
+    top: 700vw;
+  }
+}
+@media screen and (min-width: 469px) {
+  .gallery {
+    height: 50vw;
   }
 }
 .testimonials {
@@ -1150,9 +1177,14 @@ header {
   margin: 0 12px;
   height: 15px;
   width: 15px;
+  z-index: 5;
 }
 
-.carousel-slider--bullet:hover {
+#carousel-slider--bullet_2:hover .logos-wrapper {
+  left: -50%;
+}
+
+.bullet__full {
   background-color: #acacac;
 }
 

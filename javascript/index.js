@@ -1,20 +1,5 @@
-// import $ from 'jquery';
-// import slick from 'slick-carousel';
-
-// $(document).ready(function(){
-//     $('.logos-wrapper').slick({
-//         rtl:true,
-//         infinite:true,
-//         speed: 500,
-//         cssEase: 'linear',
-//         // autoplay: true,
-//         autoplaySpeed: 6000,
-//         // arrows: true,
-//         draggable: true,
-//         slidesToShow: 4, 
-//         slidesToScroll: 2
-//     });
-//   });
+import $ from 'jquery';
+// import map from 'map';
 
 const links = document.getElementById('links');
 

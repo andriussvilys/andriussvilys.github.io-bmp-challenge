@@ -1,5 +1,4 @@
 .cache
-dist
 references
 node_modules
 slick

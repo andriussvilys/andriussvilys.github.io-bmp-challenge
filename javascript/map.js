@@ -1,6 +1,6 @@
 // let map;
 function initMap() {
-
+    console.log('maps hi')
     let styledMapType = new google.maps.StyledMapType(
 
             [
@@ -148,7 +148,7 @@ function initMap() {
         disableDefaultUI: true
     });
 
-    let greenMarker = './assets/images/maps/green-marker.png';
+    let greenMarker = 'https://i.imgur.com/jqq2H0o.png';
     let marker = new google.maps.Marker({
         position: lavington22, 
         map: map, 
@@ -169,3 +169,6 @@ window.eqfeed_callback = function(results) {
     });
   }
 };
+window.initMap = initMap;
+
+// initMap();

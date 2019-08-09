@@ -120,6 +120,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"javascript/map.js":[function(require,module,exports) {
 // let map;
 function initMap() {
+  console.log('maps hi');
   var styledMapType = new google.maps.StyledMapType([{
     "featureType": "administrative",
     "elementType": "labels.text.fill",
@@ -222,7 +223,7 @@ function initMap() {
     center: lavington22,
     disableDefaultUI: true
   });
-  var greenMarker = './assets/images/maps/green-marker.png';
+  var greenMarker = 'https://i.imgur.com/jqq2H0o.png';
   var marker = new google.maps.Marker({
     position: lavington22,
     map: map,
@@ -244,7 +245,9 @@ window.eqfeed_callback = function (results) {
     });
   }
 };
-},{}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+window.initMap = initMap; // initMap();
+},{}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -272,19 +275,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< Updated upstream
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55566" + '/');
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55566" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55306" + '/');
->>>>>>> Stashed changes
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55306" + '/');
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60391" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -459,5 +450,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","javascript/map.js"], null)
+},{}]},{},["node_modules/parcel/src/builtins/hmr-runtime.js","javascript/map.js"], null)
 //# sourceMappingURL=/map.afb51f46.js.map
