@@ -695,6 +695,7 @@ header {
   width: 100%;
   height: 50vw;
   position: relative;
+  overflow: hidden;
 }
 
 .grid-folio-main {
@@ -713,6 +714,11 @@ header {
 
 .grid-small-folio-wrapper--column__1 {
   right: 25%;
+}
+
+.grid-extra {
+  z-index: 2;
+  right: -50%;
 }
 
 .grid-folio {
@@ -864,6 +870,8 @@ header {
   .grid-small-folio-wrapper, .grid-folio-main {
     height: 100vw;
     width: 100%;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
   }
   .grid-small-folio-wrapper {
     height: 200vw;
@@ -888,6 +896,14 @@ header {
   }
   .grid-folio--info__subheadline {
     font-size: 3vw;
+  }
+  #grid-extra__2 {
+    right: initial;
+    top: 500vw;
+  }
+  #grid-extra__1 {
+    right: initial !important;
+    top: 700vw;
   }
 }
 
@@ -1531,5 +1547,9 @@ footer::before {
     bottom: 43px;
     left: 0;
   }
+}
+
+.slick-track {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

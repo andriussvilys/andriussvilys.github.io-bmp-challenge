@@ -44,7 +44,10 @@ const carouselBullets = ()=>{
         $(bullet).mouseover(function(){
             $(`#${bullet.id}`).addClass('bullet__full');
             if($(document).width() > 768 ){
-                $(logosWrapper).css('left', `-${moveLeftDesktop[index]}%`);
+            //     $(logosWrapper).animate({'left': `-${moveLeftDesktop[index]}%`}, 200);
+            // }
+            // else($(logosWrapper).animate({'left': `-${moveLeftMobile[index]}%`}, 200));
+            $(logosWrapper).css('left', `-${moveLeftDesktop[index]}%`);
             }
             else($(logosWrapper).css('left', `-${moveLeftMobile[index]}%`))
             filterBullet(bullet.id);
@@ -55,10 +58,38 @@ const carouselBullets = ()=>{
 carouselBullets();
 
 $(window).resize(function(){
-    const firstBullet = $('.carousel-slider--bullet')[0];
-    filterBullet(firstBullet);
-    $(logosWrapper).css('left', `0`);
-    $(firstBullet).addClass('bullet__full');
-
-    carouselBullets();
+    // const firstBullet = $('.carousel-slider--bullet')[0];
+    // filterBullet(firstBullet);
+    // $(logosWrapper).animate({'left': `0`}, 200);
+    // // $(logosWrapper).css('left', `0`);
+    // $(firstBullet).addClass('bullet__full');
+    // carouselBullets();
+    // if($(document).width() > $(document).height()){
+    //     $('.gallery').css('height', '50vw');
+    // }
+    location.reload();
+    console.log('reload')
   });
+
+  const gridCta = $('#grid-cta');
+  const gridExtra1 = $('#grid-extra__1');
+  const gridExtra2 = $('#grid-extra__2');
+
+//   gridCta.click(function(){
+//     $('#grid-extra__1').css('right', '25%');
+//     $('#grid-extra__2').css('right', '0');
+//   })
+let galleryHeight = 300;
+  gridCta.click(function(){
+    if($(document).width() > 468 ){
+        $('#grid-extra__1').animate({'right': '25%'}, 600);
+        $('#grid-extra__2').animate({'right': '0'}, 400);
+        return
+    }
+        if(galleryHeight === 900){return}
+        galleryHeight += 200;
+        console.log(galleryHeight)
+        $('.gallery').animate({height: `${galleryHeight}vw`});
+        console.log(galleryHeight)
+        // if(galleryHeight === 900){galleryHeight = 700}
+  })

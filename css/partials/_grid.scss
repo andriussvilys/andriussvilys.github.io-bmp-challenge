@@ -12,6 +12,7 @@
     width: 100%;
     height: 50vw;
     position: relative;
+    overflow: hidden;
 }
 
 .grid-folio-main{
@@ -28,8 +29,14 @@
     // display: flex;
     // flex-wrap: wrap;
 }
+
 .grid-small-folio-wrapper--column__1{
     right: 25%;
+}
+.grid-extra{
+    z-index: 2;
+    // transform: rotateX(180deg);
+    right: -50%;
 }
 
 //FOLIO set-up (photo, gradient, hover state, info box)
@@ -162,6 +169,7 @@ background-color: lime;
     .grid-small-folio-wrapper, .grid-folio-main{
         height: 100vw;
         width:100%;
+        transition: all 0.2s;
         // position: absolute;
     }
     .grid-small-folio-wrapper{
@@ -189,6 +197,13 @@ background-color: lime;
     .grid-folio--info__subheadline{
         font-size: 3vw;
     }
-    
+    #grid-extra__2{
+        right: initial;
+        top: 500vw;
+    }
+    #grid-extra__1{
+        right: initial !important;
+        top: 700vw;
+    }
 }
 
