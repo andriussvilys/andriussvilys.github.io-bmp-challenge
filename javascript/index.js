@@ -16,7 +16,6 @@
 //     });
 //   });
 
-
 const links = document.getElementById('links');
 
 const hamburger = document.getElementById('hamburger');
@@ -58,17 +57,18 @@ const carouselBullets = ()=>{
 carouselBullets();
 
 $(window).resize(function(){
-    // const firstBullet = $('.carousel-slider--bullet')[0];
-    // filterBullet(firstBullet);
-    // $(logosWrapper).animate({'left': `0`}, 200);
-    // // $(logosWrapper).css('left', `0`);
-    // $(firstBullet).addClass('bullet__full');
-    // carouselBullets();
-    // if($(document).width() > $(document).height()){
-    //     $('.gallery').css('height', '50vw');
-    // }
-    location.reload();
-    console.log('reload')
+    const firstBullet = $('.carousel-slider--bullet')[0];
+    filterBullet(firstBullet);
+    $(logosWrapper).animate({'left': `0`}, 200);
+    // $(logosWrapper).css('left', `0`);
+    $(firstBullet).addClass('bullet__full');
+    carouselBullets();
+    if($(document).width() > 468){
+        $('.gallery').css('height', '50vw');
+    }
+    if($(document).width() < 469){
+        $('.gallery').css('height', '300vw');
+    }
   });
 
   const gridCta = $('#grid-cta');

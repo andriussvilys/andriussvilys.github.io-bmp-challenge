@@ -907,6 +907,12 @@ header {
   }
 }
 
+@media screen and (min-width: 469px) {
+  .gallery {
+    height: 50vw;
+  }
+}
+
 .testimonials {
   -ms-grid-column: 2;
       grid-column-start: 2;
