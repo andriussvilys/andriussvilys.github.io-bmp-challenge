@@ -11,7 +11,6 @@
 - Clone this repository and install dependencies with `npm i` <br>
 - Run `npm run dev` to start local dev server <br>
 - Run `npm run build` to compile ready-to-deploy bundle to `dist` folder <br>
-- Run `npm run server` to run local PHP server on `dist` folder
 
 ### Folder structure:
 - `assets` - images, icons and fonts <br>
