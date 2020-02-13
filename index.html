@@ -5,7 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="stylesheet" type="text/css" href="css/main.scss">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+      <!-- <script type="text/javascript">
+        $(document).ready(function(){
+          console.log($('.your-class')[0])
+          $('.your-class').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: true,
+            autoplay: true,
+            arrows: true,
+            appendArrows: $('.your-class')
+          });
+          $('.your-class').on('swipe', function(event, slick, direction){
+            console.log(direction);
+            // left
+          });
+
+        });
+      </script> -->
+      <script type="text/javascript">
+        $(document).on('ready', function () {
+            $(".your-class").slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+            $(".logos-wrapper").slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1
+            });
+        });
+  </script>
 
   <title>BMB</title>
 </head>
@@ -245,42 +286,46 @@
   <div class="testimonials-headline">
     <div class="testimonials-headline--dash"></div>
     <h3 class="testimonials-headline--text">Our clients about us</h3>
+    <img 
+    class="testimonials-decoration"
+    src="assets/images/testimonials/commas.png" 
+    alt="over-sized quatation marks in lime color"
+    >
   </div>
 
-  <div class="testimonials-content">
-    
-    
-    <div class="testimonials-content--name-box">
-      <img 
-      class="testimonials-decoration"
-      src="assets/images/testimonials/commas.png" 
-      alt="over-sized quatation marks in lime color"
-      >
-      <div class="testimonials-content--name-box-client-detail">
-        <p class="testimonials-name">Frank Hyde</p>
-        <p class="testimonials-company">Prode Members</p>
-      </div>
-    </div><!--end of name box-->
-    
-    <div class="testimonials-comment">
-      <div class="testimonials-avatar">
-        <img src="assets/images/testimonials/luis-quintero-1508886-unsplash.png" alt="portrait of a client representative">
-      </div>
-      <p class="testimonials-coment-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Cras facilisis consectetur hendrerit. Nunc pharetra, purus sed cursus finibus, nunc orci pharetra lectus.
-      </p>
-      <button class="testimonials-caret testimonials-caret-previous"><img src="assets/images/testimonials/left -arrow.png" alt="arrow pointing left"></button>
-      <button class="testimonials-caret testimonials-caret-next"><img src="assets/images/testimonials/right-arrow.png" alt="arrow pointing right"></button>
+  
+  <button class="testimonials-caret testimonials-caret-previous"><img src="assets/images/testimonials/left -arrow.png" alt="arrow pointing left"></button>
+
+  <div class="testimonials-mainBody">
+
+    <div class="testimonials-content">
+        <div class="testimonials-avatar">
+          <img src="assets/images/testimonials/luis-quintero-1508886-unsplash.png" alt="portrait of a client representative">
+        </div>
+        <div class="testimonials-comment">
+            <div class="testimonials-content--name-box-client-detail">
+              <p class="testimonials-name">Frank Hyde</p>
+              <p class="testimonials-company">Prode Members</p>
+            </div>
+            <p class="testimonials-coment-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Cras facilisis consectetur hendrerit. Nunc pharetra, purus sed cursus finibus, nunc orci pharetra lectus.
+            </p>
+        </div>
+    </div>
+
+  </div>
+
+  <button class="testimonials-caret testimonials-caret-next"><img src="assets/images/testimonials/right-arrow.png" alt="arrow pointing right"></button>
+
+
+
       <div class="testimonials-slider">
           <div class="testimonials-slider--bullet"></div>
           <div class="testimonials-slider--bullet"></div>
           <div class="testimonials-slider--bullet"></div>
       </div>
-    </div>
 
-
-  </div>
 
   <!-- <button class="testimonials-caret testimonials-caret-previous"><img src="assets/images/testimonials/left -arrow.png" alt="arrow pointing left"></button> -->
   <!-- <button class="testimonials-caret testimonials-caret-next"><img src="assets/images/testimonials/right-arrow.png" alt="arrow pointing right"></button> -->
@@ -338,11 +383,40 @@
   </div>
 </section>
 
+<div class="your-class_2">
+  <!-- <div class="slick-content">your content</div>
+  <div class="slick-content">your content</div>
+  <div class="slick-content">your content</div> -->
+  <div class="your-class">
+    <div>
+        <img src="http://placehold.it/350x300?text=1">
+    </div>
+    <div>
+        <img src="http://placehold.it/350x300?text=2">
+    </div>
+    <div>
+        <img src="http://placehold.it/350x300?text=3">
+    </div>
+    <div>
+        <img src="http://placehold.it/350x300?text=4">
+    </div>
+    <div>
+        <img src="http://placehold.it/350x300?text=5">
+    </div>
+    <div>
+        <img src="http://placehold.it/350x300?text=6">
+    </div>
+  </div>
+
+</div>
+
+
 
 <section class="map">
   <div id="map">
   </div>
 </section>
+
 <footer id="contact">
   <div class="footer--address">
     <p class="footer--address__bold">BMB London</p>
@@ -373,12 +447,16 @@
 </footer>
 
 </div>
-<script src='javascript/map.js'> </script>
+<!-- <script src='javascript/map.js'> </script>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDP_8fXFEMwFaachBVyhrvSxC8DEYlw04&callback=initMap">
 </script>
 
-<script src="javascript/index.js"></script>
+<script src="javascript/index.js"></script> -->
+
+<!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script> -->
 
 </body>
 </html>

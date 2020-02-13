@@ -142,11 +142,68 @@ button{
     min-width: 20px;
 }
 
+.your-class_2{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  -ms-grid-row: 7;
+  grid-row-start: 7;
+  grid-row-end: 8;
+  height: 70vh;
+  width: 100vw;
+  // display: flex;
+background-color: yellow;
+}
+.slick-track{
+  display: flex !important;
+  width: 100%;
+}
+.slick-slider {
+  width: 100% !important;
+}
+.slick-list{
+  width: 100%;
+  height: 100%;
+  border: 2px solid white;
+}
+.slick-track{
+  height: 100%;
+}
+.carousel{
+  // background-color: aquamarine !important;
+}
+
+// .slick-content{
+//   height: 200px;
+//   min-width: 200px;
+//   background-color: aquamarine;
+//   border: 1px solid black;
+//   margin: 3px;
+// }
+
+
   // .grid, 
   // .logos, .carousel, .map{
   //   display: none;
   // }
-
+  .slick-dots li.slick-active button::before{
+    background-color: white;
+  }
+  .slick-dots li button{
+    color: white !important;
+  }
+  .slick-dots li button::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    content: '';
+    text-align: center;
+    opacity: .25;
+    color: white;
+    border: 2px solid white;
+    border-radius: 999px;
+  }
   .wrapper{
     width: 100vw;
     overflow: hidden;
@@ -172,8 +229,7 @@ button{
   @import "partials/grid";
   @import "partials/testimonials";
   @import "partials/carousel";
-  @import "partials/map";
-
+  // @import "partials/map";
   @import "partials/footer";
 
   .slick-track { display: none; }
