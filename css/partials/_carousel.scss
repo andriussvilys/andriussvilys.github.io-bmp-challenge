@@ -46,23 +46,22 @@ $logos-wrapper-desktop-height: 18.49vw;
     justify-content: space-between;
     transition: all 0.2s;
 }
+.logos-block{
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-between;
+  }
 .carousel-logos--column{
-    width: 25%;
+    width: 20%;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    max-width: 13.44vw;
-}
-.carousel-logos--column{
-    // border: 1px solid yellow;
+    // max-width: 13.44vw;
     position: relative;
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 .carousel-logos-image{
-    max-height: 4.79vw;
+    // max-height: 4.79vw;
     max-width: 100%;
     width: auto;
     position: absolute;

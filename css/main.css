@@ -94,6 +94,10 @@ button {
   border-radius: 999px;
 }
 
+.slick-dots {
+  z-index: 999;
+}
+
 .wrapper {
   width: 100vw;
   overflow: hidden;
@@ -1337,37 +1341,32 @@ header {
   transition: all 0.2s;
 }
 
+.logos-block {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  width: 100% !important;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .carousel-logos--column {
-  width: 25%;
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 100%;
-  max-width: 13.44vw;
-}
-
-.carousel-logos--column {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .carousel-logos-image {
-  max-height: 4.79vw;
   max-width: 100%;
   width: auto;
   position: absolute;
