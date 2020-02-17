@@ -167,24 +167,6 @@ background-color: yellow;
 .slick-track{
   height: 100%;
 }
-
-.carousel{
-  // background-color: aquamarine !important;
-}
-
-// .slick-content{
-//   height: 200px;
-//   min-width: 200px;
-//   background-color: aquamarine;
-//   border: 1px solid black;
-//   margin: 3px;
-// }
-
-
-  // .grid, 
-  // .logos, .carousel, .map{
-  //   display: none;
-  // }
   .slick-dots li.slick-active button::before{
     background-color: white;
   }
@@ -207,14 +189,24 @@ background-color: yellow;
   .slick-dots{
     z-index: 999;
   }
+  .slick-dots li button::before{
+    border: 2px solid #adadad;
+    opacity: 1;
+  }
+  .slick-dots li.slick-active button::before{
+    background-color: #adadad;
+  }
+  .headline::before{
+    content: "—";
+    margin-right: 20px;
+    font-size: 20px;
+}
   .wrapper{
     width: 100vw;
     overflow: hidden;
     display: grid;
     grid-template-rows: [nav]min-content [haeder]calc(100vh - 70px) [txt]auto [grid]auto [testimonials]auto [logos]auto [map]auto [footer]auto;
-    // -ms-grid-rows: unquote("min-content calc(100vh - 70px) (auto)[6]");
     grid-template-columns: [margin-left]14.6vw [middle-content]auto 14.6vw;
-    // grid-template-columns: [margin-left]minmax(40px, 14.6vw) [middle-content]auto minmax(40px, 14.6vw);
     position: relative;
   }
 
@@ -232,7 +224,7 @@ background-color: yellow;
   @import "partials/grid";
   @import "partials/testimonials";
   @import "partials/carousel";
-  // @import "partials/map";
+  @import "partials/map";
   @import "partials/footer";
 
   .slick-track { display: none; }

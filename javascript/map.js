@@ -140,7 +140,8 @@ function initMap() {
     }
 ], {name: 'simple-band-w'});
 
-    let lavington22 = {lat: 51.505182, lng: -0.0999387};
+    // let lavington22 = {lat: 51.505182, lng: -0.0999387};
+    let lavington22 = new google.maps.LatLng(51.505182, -0.0999387)
 
     let map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13, 
@@ -157,6 +158,7 @@ function initMap() {
 
     map.mapTypes.set('styled_map', styledMapType);
     map.setMapTypeId('styled_map');
+    marker.setMap(map)
 };
 
 window.eqfeed_callback = function(results) {
@@ -169,6 +171,6 @@ window.eqfeed_callback = function(results) {
     });
   }
 };
-window.initMap = initMap;
+window.initMap = initMap();
 
 // initMap();

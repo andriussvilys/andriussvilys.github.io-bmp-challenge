@@ -49,7 +49,7 @@
         position: absolute;
         z-index: -1;
         top: 10.2vw;
-        left: 20.8vw;
+        left: 19.8vw;
     }
     .testimonials-name{
         font-size: 1.6vw;
@@ -115,33 +115,16 @@
         content:"" !important;
     }
 }
-
-// .testimonials-caret{
-//     position: absolute;
-//     height: 1.82vw;
-//     // width: 20px;
-//     top: calc(50% - 0.91vw);
-//     img{
-//         height: 100%;
-//         width: 100%;
-//     }
+// .testimonials-slider{
+//     display: flex;
+//     display: none;
 // }
-// .testimonials-caret-previous{
-// left: -3vw;
+// .testimonials-slider--bullet{
+//     @include slider-bullet;
 // }
-// .testimonials-caret-next{
-// right: 3vw;
+// .testimonials-slider--bullet:hover{
+//     background-color: #acacac;
 // }
-.testimonials-slider{
-    display: flex;
-    display: none;
-}
-.testimonials-slider--bullet{
-    @include slider-bullet;
-}
-.testimonials-slider--bullet:hover{
-    background-color: #acacac;
-}
 
 .testimonials-mainBody{
     position: absolute;
@@ -150,39 +133,61 @@
     width: 49.38vw !important;
 }
 
+//MOBILE ***********************************************************************************************
 @media screen and (max-width: 768px){
     .testimonials{
         grid-column-start: 1;
         grid-column-end: 4;
-        height: 648px;
         // border: 1px solid;
         min-width: 240px;
         margin: 0 auto;
+        overflow: hidden;
+        height: 212.5vw;
     }
     .testimonials-headline{
-        height: 130px;
+        height: 50.3vw;
         top: 0;
+        align-items: initial;
+    }
+    .testimonials-decoration{
+        width: 55.5vw; 
+        height: 45vw;
+        left: 0;
+        top: 100%;
     }
     .testimonials-headline--dash{
         width: 20px;
         margin-right: 20px;
     }
     .testimonials-headline--text{
+        margin-top: 28.13vw;
         font-size: 12px;
+    }
+    .headline::before{
+        content: "—";
+        margin-right: 20px;
+        font-size: 5.91vw;
+    }
+    
+    .testimonials-mainBody{
+        width: 100vw !important;
+        height: 102.3vw;
+        bottom: initial;
+        top: 85vw;
+        .slick-arrow{
+            display: none !important;
+        }
     }
     .testimonials-content{
         width: 100%;
-        top: 130px;
-        position: absolute;
+        flex-direction: column;
+        height: 100% !important;
+        padding: 0 13.125vw;
     }
     .testimonials-content--name-box{
         margin-left: 0;
         width: 185px;
         height: 143px;
-    }
-    .testimonials-content--name-box-client-detail{
-        margin-left: 120px;
-        margin-top: 112px;
     }
     .testimonials-name{
         font-size: 20px;
@@ -192,34 +197,22 @@
     .testimonials-company{
         font-size: 9px;
     }
-
-        
+    
+    .testimonials-avatar{
+        width: 28vw; 
+        height: 28vw; 
+        margin-left: 3.125vw;  
+        margin-bottom: 6.875vw;
+        margin-top: 4.9vw;
+    }
     .testimonials-comment{
         bottom: initial;
-        top: 123px;
         display: initial;
+        position: absolute;
     }
-        .testimonials-avatar{
-            width: 96px;
-            height: 96px;;
-            margin-left: 10px;
-            margin-bottom: 22px;
-            img{
-                height: 100%;
-            }
-        }
-        .testimonials-coment-text{
-            font-size: 14px;
-        }
-        // .testimonials-decoration{
-        // }
-
-    .testimonials-caret{
-        display: none;
-    }
-    .testimonials-slider{
-        display: flex;
-        bottom: 77px;
+    .testimonials-coment-text{
+        font-size: 4.9vw;
+        top: 39.7vw;
         position: absolute;
     }
 
@@ -227,17 +220,14 @@
         grid-column-start: 2;
         grid-column-end: 3;
         margin: initial;
-        height: calc(114.6875vw + 130px + 13px + 130px);
     }
     .testimonials-headline--text{
         @include headline-mobile;
     }
-    .testimonials-decoration	{width: 57.5vw; height: 45vw}
-.testimonials-avatar	{width: 30vw; height: 30vw; margin-left: 3.125vw;  margin-bottom: 6.875vw}
-.testimonials-comment	{top: 38.738vw}
+
+
 .testimonials-content--name-box-client-detail{
     margin-left: 37.5vw;
-    margin-top: 35vw;
     }
     .testimonials-slider{
         // position: initial;
@@ -252,9 +242,7 @@
     .testimonials-company{
         font-size: 3.3vw;
     }
-    .testimonials-coment-text{
-        font-size: 4.9vw;
-    }
+
     .testimonials-header--text{
         font-size: 4vw;
     }
