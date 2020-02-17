@@ -131,6 +131,9 @@
     bottom: 0;
     margin-bottom: 9.48vw !important;
     width: 49.38vw !important;
+    .slick-dots{
+        display: none !important;
+    }
 }
 
 //MOBILE ***********************************************************************************************
@@ -176,6 +179,9 @@
         top: 85vw;
         .slick-arrow{
             display: none !important;
+        }
+        .slick-dots{
+            display: initial !important;
         }
     }
     .testimonials-content{
