@@ -8,10 +8,7 @@ hamburger.addEventListener('click', ()=>{
     links.classList.toggle('menu-links-container__display-on')
 })
 
-let mobile = null
-
 //get a list of all partner ids in #work component
-
 
 const scrollToHorizontal = (id, parent_id) => {
     const parent = $(`#${parent_id} .slick-dots`)[0]
@@ -41,49 +38,11 @@ const scrollToHorizontal = (id, parent_id) => {
         }
   }
 
-//   let options = {
-//     root: $('#work .slick-dots').width(),
-//     rootMargin: `0 0 0 ${$('#work .slick-dots').width()/2}px`,
-//     threshold: 1.0
-//   }
-  
-//   let observer = new IntersectionObserver(isInMiddle, options);
-//   let partnerIds = Object.values($('#work li')).map(li => li.id).filter(item => item !== undefined)
-//   partnerIds.forEach(id => {
-//     //   if(document.getElementById(id).classList.contains("slick-active")){
-//     //       console.log("is observed")
-//     //       console.log(id)
-//     //       observer.observe(document.getElementById(id))
-//     //   }
-//       document.getElementById(id).addEventListener("click", ()=>{
-//           scrollToHorizontal(id, "work")
-//       })
-//   })
-//     observer.observe()
-
-//   const isInMiddle = (entries) => {
-       
-//   }
-
-  const checkMobile = () => {
-      setTimeout(() => {          
-          if(document.getElementById("people").getBoundingClientRect() > 768){
-              return false
-          }
-          else{
-              return true
-          }
-      }, 600);
-  }
-
-  window.addEventListener("resize", ()=>{
-    mobile = checkMobile()
-  })
-  
-
-
   $(document).on('ready', function () {
-    mobile = checkMobile()
+
+
+
+
     setTimeout(() => {        
         let partnerIds = Object.values($('#work li')).map(li => li.id).filter(item => item !== undefined)
         partnerIds.forEach(id => {
@@ -92,6 +51,45 @@ const scrollToHorizontal = (id, parent_id) => {
                 scrollToHorizontal(id, "work")
             })
         })
+
+        let options = {
+            root: $("#carousel .slick-dots")[0],
+            rootMargin: "0px",
+            threshold: 0.05
+          }
+    
+        const carouselActiveDot = $("#carousel .slick-active")[0]
+        const carouselDots = Object.values($("#carousel .slick-dots li")).filter(value => value.id)
+
+        function intersectionCallback(entries) {
+            entries.forEach(function(entry) {
+                // console.log(entry.id)
+              if (entry.isIntersecting) {
+                console.log("is intersecting")
+              } else {
+                entry.style.border = "1px solid red"
+                console.log("is NOT intersecting")
+              }
+            });
+          }
+      
+        // let observer = new IntersectionObserver(()=>{
+        //     intersectionCallback([carouselActiveDot])
+        // }
+        // ,options);
+        
+        // [carouselActiveDot].forEach(dot => {
+        //     observer.observe(dot)
+        // })
+        let observer = new IntersectionObserver(()=>{
+            intersectionCallback(carouselDots)
+        }
+        ,options);
+        
+        carouselDots.forEach(dot => {
+            observer.observe(dot)
+        })
+
     }, 1000);
     $(".your-class").slick({
         dots: true,
@@ -103,8 +101,16 @@ const scrollToHorizontal = (id, parent_id) => {
         dots: true,
         arrows: false,
         infinite: true,
-        slidesToShow: 0.25,
-        slidesToScroll: 0.25,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 0.25,
+                slidesToScroll: 0.25,
+            }      
+        }
+        ]
         // autoplay: true,
         // autoplaySpeed: 600
     });
@@ -114,8 +120,6 @@ const scrollToHorizontal = (id, parent_id) => {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 600
     });
 });
 

@@ -428,7 +428,7 @@ nav, .drawer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 42%;
+    height: 60%;
   }
 }
 
@@ -528,10 +528,11 @@ header {
   font-family: "MaisonNeue-Bold";
   text-transform: uppercase;
   font-size: 1em;
+  line-height: 1em;
   -ms-flex-item-align: baseline;
       align-self: baseline;
   display: inline-block;
-  padding: 1.05em 2.7em;
+  padding: 1.2em 2.1em;
   cursor: pointer;
   z-index: 0;
   -webkit-transition: background-color 0.4s;
@@ -686,7 +687,9 @@ header {
     max-width: none;
   }
   .header--cta {
-    padding: 0.8em 1.2em;
+    font-size: 3.6vw;
+    line-height: 3.6vw;
+    padding: 1.2em 2em;
   }
 }
 
@@ -873,10 +876,11 @@ header {
   font-family: "MaisonNeue-Bold";
   text-transform: uppercase;
   font-size: 1em;
+  line-height: 1em;
   -ms-flex-item-align: baseline;
       align-self: baseline;
   display: inline-block;
-  padding: 1.05em 2.7em;
+  padding: 1.2em 2.1em;
   cursor: pointer;
   z-index: 0;
   -webkit-transition: background-color 0.4s;
@@ -891,6 +895,7 @@ header {
       align-self: center;
   -webkit-transition: color 0.3s, background-color 0.3s;
   transition: color 0.3s, background-color 0.3s;
+  padding: 1.2em 3.2em;
 }
 
 .grid--cta::before {
@@ -990,6 +995,11 @@ header {
   #grid-extra__1 {
     right: initial !important;
     top: 700vw;
+  }
+  .grid--cta {
+    font-size: 3.6vw;
+    line-height: 3.6vw;
+    padding: 1.2em 3.1em;
   }
 }
 
@@ -1364,13 +1374,12 @@ header {
 }
 
 .carousel-logos--column {
-  width: 100%;
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   height: 100%;
   position: relative;
   -webkit-box-align: center;
@@ -1396,9 +1405,9 @@ header {
   top: 18.49vw;
   height: 13.75vw;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1451,6 +1460,9 @@ header {
   .logos-wrapper {
     height: 55.3vw;
     width: 600%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .logos-wrapper .slick-dots {
     top: calc(150% - 20px);
@@ -1461,13 +1473,24 @@ header {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    width: 100%;
+    width: 42.2vw;
+    display: inline-block;
+    white-space: nowrap;
   }
   .logos-wrapper .slick-dots li {
-    margin-right: 2.6vw;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    min-width: 20%;
+    overflow-y: hidden;
+  }
+  .logos-wrapper .slick-dots li button {
+    padding: 0;
+    margin: 0;
+    width: 20%;
   }
   .carousel-logos--column {
-    max-width: none;
+    width: 100%;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1497,6 +1520,9 @@ header {
   }
   .carousel-slider div:last-child {
     margin: 0;
+  }
+  .slick-dots li button::before {
+    left: calc(50% - 7px);
   }
   .carousel-photos {
     height: 50vw;
