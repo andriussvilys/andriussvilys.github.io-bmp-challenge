@@ -17,6 +17,7 @@
     "parcel": "^1.12.4"
   },
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "sass": "^1.22.9"
   },
   "description": ""
