@@ -8,8 +8,11 @@ hamburger.addEventListener('click', ()=>{
     links.classList.toggle('menu-links-container__display-on')
 })
 
-//get a list of all partner ids in #work component
-
+/**
+ * 
+ * @param {*} id Id of an elem to scrollTo
+ * @param {*} parent_id takes Id of scrollable parent
+ */
 const scrollToHorizontal = (id, parent_id) => {
     const parent = $(`#${parent_id} .slick-dots`)[0]
     const dot = $(`#${id}`)[0]
@@ -22,26 +25,64 @@ const scrollToHorizontal = (id, parent_id) => {
       parent.scrollTo(scrollTo)
       return
     }
-    const dotPosition = dot.getBoundingClientRect().x
-    const parentX = parent.getBoundingClientRect().x
-        if(dot){
-        if(dotPosition - parentX > 80){
-            scrollTo.left = (dotPosition - parentX) / 2
-        }
-          else{
-              scrollTo.left = -30
+    if(dot){
+      scrollTo.left = dot.offsetLeft - 30
+      parent.scrollTo(scrollTo)
+    }
+}
+
+  const observeCarousel = () => {
+    setTimeout(() => {      
+      const carouselDots = Object.values($("#carousel .slick-dots li")).filter(value => value.id)
+  
+      const config = { attributes: true, childList: true, subtree: true, attributeOldValue: true, attributeFilter: ['class'], };
+  
+      const mutationCallback = (entries) => {
+        entries.forEach(entry => {
+          if(entry.target.classList.contains("slick-active")){
+            scrollToHorizontal(entry.target.id, "carousel")
           }
-          if(parent.scrollLeft > 0){
-            scrollTo.left += parent.scrollLeft
-          }
-          parent.scrollTo(scrollTo)
-        }
+        })
+      }
+  
+      let mutObserver = new MutationObserver(mutationCallback)
+  
+      carouselDots.forEach(dot => {
+        mutObserver.observe(dot, config)
+      })
+    }, 100);
   }
 
+const gridCta = $('#grid-cta');
+
+let galleryHeight = 300;
+  gridCta.click(function(){
+    if($(document).width() > 468 ){
+        $('#grid-extra__1').animate({'right': '25%'}, 600);
+        $('#grid-extra__2').animate({'right': '0'}, 400);
+        return
+    }
+        if(galleryHeight === 900){return}
+        galleryHeight += 200;
+        $('.gallery').animate({height: `${galleryHeight}vw`});
+  })
+
+  $(window).resize(function(){
+    scrollCounter = 0
+    observeCarousel()
+    scrollToHorizontal($("#carousel .slick-dots .slick-active")[0].id, "carousel")
+    if($(document).width() > 468 ){
+      $('.gallery')[0].style.height = "50vw"
+    }
+    else{
+      $('.gallery')[0].style.height = "300vw"
+      galleryHeight = 300
+    }
+  });
+
   $(document).on('ready', function () {
-
-
-
+    
+    observeCarousel()
 
     setTimeout(() => {        
         let partnerIds = Object.values($('#work li')).map(li => li.id).filter(item => item !== undefined)
@@ -52,43 +93,7 @@ const scrollToHorizontal = (id, parent_id) => {
             })
         })
 
-        let options = {
-            root: $("#carousel .slick-dots")[0],
-            rootMargin: "0px",
-            threshold: 0.05
-          }
-    
         const carouselActiveDot = $("#carousel .slick-active")[0]
-        const carouselDots = Object.values($("#carousel .slick-dots li")).filter(value => value.id)
-
-        function intersectionCallback(entries) {
-            entries.forEach(function(entry) {
-                // console.log(entry.id)
-              if (entry.isIntersecting) {
-                console.log("is intersecting")
-              } else {
-                entry.style.border = "1px solid red"
-                console.log("is NOT intersecting")
-              }
-            });
-          }
-      
-        // let observer = new IntersectionObserver(()=>{
-        //     intersectionCallback([carouselActiveDot])
-        // }
-        // ,options);
-        
-        // [carouselActiveDot].forEach(dot => {
-        //     observer.observe(dot)
-        // })
-        let observer = new IntersectionObserver(()=>{
-            intersectionCallback(carouselDots)
-        }
-        ,options);
-        
-        carouselDots.forEach(dot => {
-            observer.observe(dot)
-        })
 
     }, 1000);
     $(".your-class").slick({
@@ -106,9 +111,16 @@ const scrollToHorizontal = (id, parent_id) => {
         responsive: [{
             breakpoint: 768,
             settings: {
-                slidesToShow: 0.25,
-                slidesToScroll: 0.25,
-            }      
+              slidesToShow: 0.5,
+              slidesToScroll: 0.5,
+            }
+        },
+        { 
+          breakpoint: 468,
+          settings: {
+              slidesToShow: 0.25,
+              slidesToScroll: 0.25,
+          }
         }
         ]
         // autoplay: true,
@@ -121,6 +133,23 @@ const scrollToHorizontal = (id, parent_id) => {
         slidesToShow: 1,
         slidesToScroll: 1,
     });
+    $("#carousel-photos").slick({
+      arrows: false,
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1.5,
+        }
+    }
+    ]
+    })
 });
 
 
@@ -170,25 +199,3 @@ const scrollToHorizontal = (id, parent_id) => {
 //     }
 //   });
 
-//   const gridCta = $('#grid-cta');
-//   const gridExtra1 = $('#grid-extra__1');
-//   const gridExtra2 = $('#grid-extra__2');
-
-// //   gridCta.click(function(){
-// //     $('#grid-extra__1').css('right', '25%');
-// //     $('#grid-extra__2').css('right', '0');
-// //   })
-// let galleryHeight = 300;
-//   gridCta.click(function(){
-//     if($(document).width() > 468 ){
-//         $('#grid-extra__1').animate({'right': '25%'}, 600);
-//         $('#grid-extra__2').animate({'right': '0'}, 400);
-//         return
-//     }
-//         if(galleryHeight === 900){return}
-//         galleryHeight += 200;
-//         console.log(galleryHeight)
-//         $('.gallery').animate({height: `${galleryHeight}vw`});
-//         console.log(galleryHeight)
-//         // if(galleryHeight === 900){galleryHeight = 700}
-//   })

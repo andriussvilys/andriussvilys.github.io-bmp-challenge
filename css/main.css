@@ -44,16 +44,8 @@ button {
   src: url("../assets/fonts/MaisonNeueTRIAL-Bold.otf") format("opentype");
 }
 
-.your-class_2 {
-  -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 4;
-  -ms-grid-row: 7;
-  grid-row-start: 7;
-  grid-row-end: 8;
-  height: 70vh;
-  width: 100vw;
-  background-color: yellow;
+.cta:hover::before {
+  top: 0;
 }
 
 .slick-track {
@@ -130,11 +122,11 @@ button {
   position: relative;
 }
 
-@media screen and (max-width: 768px), screen and (max-height: 786px) {
+@media screen and (max-width: 768px) {
   .wrapper {
-    -ms-grid-rows: min-content calc(100vh - 60px) 87vh auto;
-        grid-template-rows: -webkit-min-content calc(100vh - 60px) 87vh auto;
-        grid-template-rows: min-content calc(100vh - 60px) 87vh auto;
+    -ms-grid-rows: min-content calc(100vh - 60px) 169vw auto;
+        grid-template-rows: -webkit-min-content calc(100vh - 60px) 169vw auto;
+        grid-template-rows: min-content calc(100vh - 60px) 169vw auto;
     -ms-grid-columns: [margin-left] 13.125vw [middle-content] auto 13.125vw;
         grid-template-columns: [margin-left] 13.125vw [middle-content] auto 13.125vw;
   }
@@ -547,8 +539,8 @@ header {
   height: 100%;
   position: relative;
   background-color: lime;
-  left: -100%;
-  top: 0;
+  left: 0;
+  top: -100%;
   position: absolute;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -738,24 +730,51 @@ header {
 .txt-subheadline {
   font-family: "MaisonNeue-LightItalic";
   color: #8e8e8e;
-  font-size: 1.5vw;
-  max-width: 40%;
+  font-size: 1.7vw;
+  max-width: 28.65vw;
 }
 
-@media screen and (max-width: 468px) {
+@media screen and (max-width: 768px) {
   .txt {
-    padding: 17.1vh 0 17.7vh 0;
+    padding: 12.8vw 0 9.5vw 0;
+    height: 100%;
   }
   .txt-headline {
     font-family: "MaisonNeue-Bold";
     font-size: 12vw;
-    line-height: 7.4vh;
+    line-height: 86px;
   }
   .txt-subheadline {
     font-family: "MaisonNeue-LightItalic";
     color: #8e8e8e;
     font-size: 4.6vw;
-    line-height: 4vh;
+    line-height: 51px;
+  }
+  .txt-headline, .txt-subheadline {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .txt {
+    height: 100%;
+    padding: 34.8vw 0 32.5vw 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-height: 169vw;
+  }
+  .txt-headline {
+    font-family: "MaisonNeue-Bold";
+    font-size: 12vw;
+    line-height: initial;
+  }
+  .txt-subheadline {
+    font-family: "MaisonNeue-LightItalic";
+    color: #8e8e8e;
+    font-size: 4.6vw;
+    line-height: 24px;
   }
   .txt-headline, .txt-subheadline {
     max-width: none;
@@ -904,22 +923,14 @@ header {
   height: 100%;
   position: relative;
   background-color: lime;
-  left: -100%;
-  top: 0;
+  left: 0;
+  top: -100%;
   position: absolute;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: -1;
   mix-blend-mode: multiply;
   opacity: 0.8;
-}
-
-.grid--cta:hover::before {
-  left: 0;
-}
-
-.grid--cta:hover {
-  color: #ffffff;
 }
 
 .grid-folio--info {
@@ -1001,11 +1012,8 @@ header {
     line-height: 3.6vw;
     padding: 1.2em 3.1em;
   }
-}
-
-@media screen and (min-width: 469px) {
-  .gallery {
-    height: 50vw;
+  .grid--cta-wrapper {
+    padding-top: 8.75vw;
   }
 }
 
@@ -1430,6 +1438,103 @@ header {
 
 @media screen and (max-width: 768px) {
   .carousel {
+    height: 173.563vw;
+  }
+  .carousel-headline {
+    height: 40.62vw;
+  }
+  .carousel-headline--text {
+    font-size: 3.91vw;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 14vw;
+  }
+  .carousel-logos {
+    width: 70vw;
+    height: 78.93vw;
+    margin: 40.62vw 15vw 0 15vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 50.93vw;
+    position: relative;
+  }
+  .carousel-logos .slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+  .logos-wrapper {
+    height: 42.3vw;
+    width: 600%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .logos-wrapper .slick-dots {
+    top: calc(150% - 20px);
+    height: initial;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    overflow-x: auto;
+    width: 42.2vw;
+    white-space: nowrap;
+    overflow-y: hidden;
+  }
+  .logos-wrapper .slick-dots li {
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    min-width: 20%;
+  }
+  .logos-wrapper .slick-dots li button {
+    padding: 0;
+    margin: 0;
+    width: 20%;
+  }
+  .carousel-logos--column {
+    width: 23%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .carousel-logos-image {
+    max-height: 19.69vw;
+  }
+  .carousel-slider--bullet__mobile {
+    display: initial;
+  }
+  .carousel-slider--bullet {
+    height: 13px;
+    width: 13px;
+    margin: 0 8px 0 0;
+    display: initial;
+  }
+  .carousel-slider {
+    height: 50.93vw;
+    top: 42.3vw;
+  }
+  .carousel-slider div:last-child {
+    margin: 0;
+  }
+  .slick-dots li button::before {
+    left: calc(50% - 7px);
+  }
+  .carousel-photos {
+    height: 50vw;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .carousel {
     height: 226.5625vw;
   }
   .carousel-headline {
@@ -1459,73 +1564,14 @@ header {
   }
   .logos-wrapper {
     height: 55.3vw;
-    width: 600%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
   .logos-wrapper .slick-dots {
-    top: calc(150% - 20px);
-    height: initial;
-    padding-top: 15px;
-    padding-bottom: 20px;
-    overflow-x: auto;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    width: 42.2vw;
-    display: inline-block;
-    white-space: nowrap;
-  }
-  .logos-wrapper .slick-dots li {
-    margin: 0;
-    padding: 0;
-    width: 20%;
-    min-width: 20%;
-    overflow-y: hidden;
-  }
-  .logos-wrapper .slick-dots li button {
-    padding: 0;
-    margin: 0;
-    width: 20%;
   }
   .carousel-logos--column {
     width: 100%;
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .carousel-logos-image {
-    max-height: 19.69vw;
-  }
-  .carousel-slider--bullet__mobile {
-    display: initial;
-  }
-  .carousel-slider--bullet {
-    height: 13px;
-    width: 13px;
-    margin: 0 8px 0 0;
-    display: initial;
-  }
-  .carousel-slider {
-    height: 50.93vw;
-    top: 55.3vw;
-  }
-  .carousel-slider div:last-child {
-    margin: 0;
-  }
-  .slick-dots li button::before {
-    left: calc(50% - 7px);
-  }
-  .carousel-photos {
-    height: 50vw;
   }
 }
 

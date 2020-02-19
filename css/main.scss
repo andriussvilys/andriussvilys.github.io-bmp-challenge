@@ -92,14 +92,19 @@ button{
     overflow: hidden;
   }
 
+  .cta:hover::before{
+    top: 0;
+  }
+
   @mixin cta-before{
   content: "";
   width: 100%;
   height: 100%;
   position: relative;
   background-color: lime;
-  left: -100%;
-  top: 0;
+  left: 0;
+  top: -100%;
+  // top: 0;
   position: absolute;
   transition: all 0.2s;
   z-index: -1;
@@ -143,17 +148,7 @@ button{
     min-width: 20px;
 }
 
-.your-class_2{
-  grid-column-start: 1;
-  grid-column-end: 4;
-  -ms-grid-row: 7;
-  grid-row-start: 7;
-  grid-row-end: 8;
-  height: 70vh;
-  width: 100vw;
-  // display: flex;
-background-color: yellow;
-}
+
 .slick-track{
   display: flex !important;
   width: 100%;
@@ -211,10 +206,9 @@ background-color: yellow;
     position: relative;
   }
 
-   @media screen and (max-width: 768px), 
-   screen and (max-height: 786px){
+   @media screen and (max-width: 768px){
       .wrapper{    
-        grid-template-rows: min-content calc(100vh - 60px) 87vh auto;
+        grid-template-rows: min-content calc(100vh - 60px) 169vw auto;
         grid-template-columns: [margin-left]13.125vw [middle-content]auto 13.125vw;
         }
     }

@@ -93,11 +93,11 @@ $logos-wrapper-desktop-height: 18.49vw;
 //Mobile*******************************************************************************************
 
 @media screen and (max-width: 768px){
-    $logos-wrapper-mobile-height: 55.3vw;
+    $logos-wrapper-mobile-height: 42.3vw;
     .carousel{
-        height: 226.5625vw;
+        height: 173.563vw;
     }
-    $carousel-mobile-headline-height: 65.62vw;
+    $carousel-mobile-headline-height: 40.62vw;
     .carousel-headline{
         height: $carousel-mobile-headline-height;
     }
@@ -105,13 +105,12 @@ $logos-wrapper-desktop-height: 18.49vw;
         @include headline-mobile;
         position: absolute;
         bottom: 0;
-        margin-bottom: 25.63vw;
+        margin-bottom: 14vw;
     }
     .carousel-logos{
-        width: 50vw;
-        height: 105.93vw;
-        margin: $carousel-mobile-headline-height 25vw 0 25vw;
-        // border: 1px solid white;
+        width: 70vw;
+        height: 78.93vw;
+        margin: $carousel-mobile-headline-height 15vw 0 15vw;
         display: flex;
         justify-content: space-between;
         padding-bottom: 50.93vw;
@@ -119,7 +118,6 @@ $logos-wrapper-desktop-height: 18.49vw;
         .slick-dotted.slick-slider{
             margin-bottom: 0;
         }
-        // overflow: initial;
     }
     .logos-wrapper{
         height: $logos-wrapper-mobile-height;
@@ -131,17 +129,16 @@ $logos-wrapper-desktop-height: 18.49vw;
             padding-top: 15px;
             padding-bottom: 20px;
             overflow-x: auto;
-            justify-content: flex-start;
+            // justify-content: flex-start;
             width: 42.2vw;
-            display: inline-block;
+            // display: inline-block;
             white-space: nowrap;
+            overflow-y: hidden;
             li{
                 margin: 0;
                 padding: 0;
                 width: 20%;
                 min-width: 20%;
-                overflow-y: hidden;
-                // border: 1px solid white;
                 button{
                     padding: 0;
                     margin: 0;
@@ -151,8 +148,7 @@ $logos-wrapper-desktop-height: 18.49vw;
         }
     }
     .carousel-logos--column{
-        width: 100%;
-        // border: 1px solid yellow;
+        width: 23%;
         position: relative;
         display: flex;
         justify-content: center;
@@ -160,9 +156,6 @@ $logos-wrapper-desktop-height: 18.49vw;
     }
     .carousel-logos-image{
         max-height: 19.69vw;
-        // max-width: 100%;
-        // width: auto;
-        // position: absolute;
     }
     .carousel-slider--bullet__mobile{
         display: initial;
@@ -187,4 +180,42 @@ $logos-wrapper-desktop-height: 18.49vw;
         height: 50vw;
     }
 
+}
+
+@media screen and (max-width: 468px){
+    .carousel{
+        height: 226.5625vw;
+    }
+    $logos-wrapper-mobile-height: 55.3vw;
+    $carousel-mobile-headline-height: 65.62vw;
+    .carousel-headline{
+        height: $carousel-mobile-headline-height;
+    }
+    .carousel-headline--text{
+        @include headline-mobile;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 25.63vw;
+    }
+    .carousel-logos{
+        width: 50vw;
+        height: 105.93vw;
+        margin: $carousel-mobile-headline-height 25vw 0 25vw;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 50.93vw;
+        position: relative;
+        .slick-dotted.slick-slider{
+            margin-bottom: 0;
+        }
+    }
+    .logos-wrapper{
+        height: $logos-wrapper-mobile-height;
+        .slick-dots{
+            justify-content: flex-start;
+        }
+    }
+    .carousel-logos--column{
+        width: 100%;
+    }
 }

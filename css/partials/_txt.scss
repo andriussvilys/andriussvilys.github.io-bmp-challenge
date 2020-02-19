@@ -20,25 +20,48 @@
 .txt-subheadline{
     font-family: "MaisonNeue-LightItalic";
     color: #8e8e8e;
-    font-size: 1.5vw;
-    max-width: 40%;
+    font-size: 1.7vw;
+    max-width: 28.65vw;
 }
-
-@media screen and (max-width: 468px){
+@media screen and (max-width: 768px){
     .txt{
-        padding: 17.1vh 0 17.7vh 0;
-        // flex-direction: column;
+        padding: 12.8vw 0 9.5vw 0;
+        height: 100%;
     }
     .txt-headline{
         font-family: "MaisonNeue-Bold";
         font-size: 12vw;
-        line-height: 7.4vh;
+        line-height: 86px;
     }
     .txt-subheadline{
         font-family: "MaisonNeue-LightItalic";
         color: #8e8e8e;
         font-size: 4.6vw;
-        line-height: 4vh;
+        line-height: 51px;
+    }
+    .txt-headline, .txt-subheadline{
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 468px){
+    .txt{
+        height: 100%;
+        padding: 34.8vw 0 32.5vw 0;
+        flex-direction: column;
+        max-height: 169vw;
+        // flex-direction: column;
+    }
+    .txt-headline{
+        font-family: "MaisonNeue-Bold";
+        font-size: 12vw;
+        line-height: initial;
+    }
+    .txt-subheadline{
+        font-family: "MaisonNeue-LightItalic";
+        color: #8e8e8e;
+        font-size: 4.6vw;
+        line-height: 24px;
     }
     .txt-headline, .txt-subheadline{
         max-width: none;
