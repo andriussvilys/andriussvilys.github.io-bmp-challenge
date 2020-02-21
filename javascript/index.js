@@ -142,7 +142,7 @@ let galleryHeight = 300;
       slidesToShow: 3,
       slidesToScroll: 1,
       responsive: [{
-        breakpoint: 768,
+        breakpoint: 468,
         settings: {
           slidesToShow: 1.5,
           slidesToScroll: 1.5,
