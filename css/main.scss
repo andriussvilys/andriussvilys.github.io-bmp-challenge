@@ -208,7 +208,7 @@ button{
 
    @media screen and (max-width: 768px){
       .wrapper{    
-        grid-template-rows: min-content calc(100vh - 60px) 169vw auto;
+        grid-template-rows: min-content calc(100vh - 60px) auto auto;
         grid-template-columns: [margin-left]13.125vw [middle-content]auto 13.125vw;
         }
     }
