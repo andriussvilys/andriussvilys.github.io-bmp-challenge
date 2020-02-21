@@ -124,9 +124,10 @@ button {
 
 @media screen and (max-width: 768px) {
   .wrapper {
-    -ms-grid-rows: min-content calc(100vh - 60px) 169vw auto;
-        grid-template-rows: -webkit-min-content calc(100vh - 60px) 169vw auto;
-        grid-template-rows: min-content calc(100vh - 60px) 169vw auto;
+    height: 100%;
+    -ms-grid-rows: min-content calc(100vh - 60px) auto auto;
+        grid-template-rows: -webkit-min-content calc(100vh - 60px) auto auto;
+        grid-template-rows: min-content calc(100vh - 60px) auto auto;
     -ms-grid-columns: [margin-left] 13.125vw [middle-content] auto 13.125vw;
         grid-template-columns: [margin-left] 13.125vw [middle-content] auto 13.125vw;
   }
@@ -424,7 +425,7 @@ nav, .drawer {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   nav, .drawer {
     height: 60px;
   }
@@ -440,9 +441,9 @@ nav, .drawer {
         grid-template-columns: [logo] min-content [gutter] 1fr [links] auto;
   }
   .wrapper {
-    -ms-grid-rows: min-content calc(100vh - 60px) 87vh auto;
-        grid-template-rows: -webkit-min-content calc(100vh - 60px) 87vh auto;
-        grid-template-rows: min-content calc(100vh - 60px) 87vh auto;
+    -ms-grid-rows: min-content calc(100vh - 60px) auto auto;
+        grid-template-rows: -webkit-min-content calc(100vh - 60px) auto auto;
+        grid-template-rows: min-content calc(100vh - 60px) auto auto;
   }
 }
 
@@ -704,7 +705,7 @@ header {
   -ms-grid-row: 3;
       grid-row-start: 3;
   grid-row-end: 4;
-  height: 87vmin;
+  height: 48.96vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -737,7 +738,7 @@ header {
 @media screen and (max-width: 768px) {
   .txt {
     padding: 12.8vw 0 9.5vw 0;
-    height: 100%;
+    height: 169vw;
   }
   .txt-headline {
     font-family: "MaisonNeue-Bold";
@@ -757,7 +758,7 @@ header {
 
 @media screen and (max-width: 468px) {
   .txt {
-    height: 100%;
+    height: 169vw;
     padding: 34.8vw 0 32.5vw 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -962,7 +963,7 @@ header {
   font-size: 1.3vw;
 }
 
-@media screen and (max-width: 468px) {
+@media screen and (max-width: 769px) {
   .gallery {
     height: 300vw;
     overflow: hidden;
@@ -1185,7 +1186,7 @@ header {
   display: none !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .testimonials {
     -ms-grid-column: 1;
         grid-column-start: 1;
@@ -1271,6 +1272,7 @@ header {
     font-size: 4.9vw;
     top: 39.7vw;
     position: absolute;
+    line-height: 8.9vw;
   }
   .testimonials {
     -ms-grid-column: 2;

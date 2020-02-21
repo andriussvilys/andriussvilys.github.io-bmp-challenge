@@ -152,25 +152,9 @@ z-index: 2;
    }
  }
 
-//phone (widest common phone models)
- @media screen and (max-width: 768px)
-// ,screen and (max-height: 786px)
+ @media screen and (max-width: 769px)
  {
    @include mobile-nav-height;
    nav{grid-template-columns: [logo]min-content [gutter]1fr [links]auto;}
-   .wrapper{grid-template-rows: min-content calc(100vh - 60px) 87vh auto;};
+   .wrapper{grid-template-rows: min-content calc(100vh - 60px) auto auto;};
  }
-
-//  @media screen and (max-height: 786px){
-//   @include mobile-nav-height;
-//   nav{grid-template-columns: [logo]min-content [gutter]1fr [links]auto;}
-//   .wrapper{grid-template-rows: min-content calc(100vh - 60px) 87vh auto;};
-//  }
-
-//  @media screen and (max-width: 480px), 
-//  screen and (max-height: 480px)
-//  {
-//    @include mobile-nav-height;
-//    .wrapper{grid-template-rows: min-content calc(100vh - 60px) 87vh auto;};
-//    grid-template-columns: [logo]min-content [gutter]1fr [links]auto;
-//  }

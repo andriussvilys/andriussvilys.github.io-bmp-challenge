@@ -57,7 +57,7 @@ const gridCta = $('#grid-cta');
 
 let galleryHeight = 300;
   gridCta.click(function(){
-    if($(document).width() > 468 ){
+    if($(document).width() > 769 ){
         $('#grid-extra__1').animate({'right': '25%'}, 600);
         $('#grid-extra__2').animate({'right': '0'}, 400);
         return
@@ -71,7 +71,7 @@ let galleryHeight = 300;
     scrollCounter = 0
     observeCarousel()
     scrollToHorizontal($("#carousel .slick-dots .slick-active")[0].id, "carousel")
-    if($(document).width() > 468 ){
+    if($(document).width() > 769 ){
       $('.gallery')[0].style.height = "50vw"
     }
     else{
