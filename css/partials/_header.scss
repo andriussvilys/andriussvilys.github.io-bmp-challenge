@@ -1,9 +1,17 @@
 header{
     @include middle-column;
-    @include flex-column-center;
+    // @include flex-column-center;
     grid-row-start: 2;
     grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
     align-items: start;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 70px;
 }
 
 //text-box
@@ -13,13 +21,15 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    left: 14.6vw;
 }
 
 .text-box--headline{
   font-family: "MaisonNeue-Bold";
   font-weight: 200;
   font-size: 3vw;
-  max-width: 31.5vw;
+  width: 37%;
   br{
     display: none;
   }
@@ -53,11 +63,11 @@ header{
 
 .kv{
     position: absolute;
-    top: 70px;
+    top: 0;
     left: 0;
     z-index: -1;
     width: 100vw;
-    height: calc(100vh - 70px);
+    height: 100%;
 }
 
 @mixin kv-content{
@@ -92,8 +102,8 @@ header{
     align-items: center;
     justify-content: space-between;  
     position: absolute; 
-    left: 50%;
-    top: 83.6vh; 
+    left: calc(50% - 0.9vw);
+    bottom: 3.8vw;
     cursor: pointer; 
     height: 7.4vh;
     width: 1.875vw;
@@ -122,11 +132,13 @@ header{
   //MEDIA QUERIES
   //tablet
 
-  @media screen and (max-width: 1080px)
-  {
+  @media screen and (max-width: 1080px){
+    .text-box--headline{
+      width: 37vw;
+      max-width: 400px;
+    }
       .text-box--headline{
         font-size: 2em;
-        max-width: 400px;;
     }
     .text-box--subheadline{
         font-size: 1em;
@@ -139,17 +151,17 @@ header{
     }
   }
 
-  @media screen and (max-width: 768px)
-  ,screen and (max-height: 768px)
-  {
-    .kv{
-      height: calc(100vh - 60px);
+  @media screen and (max-width: 768px) {
+    header{
       top: 60px;
     }
   }
 
 //phone
   @media screen and (max-width: 480px) {
+    header{
+      top: 60px;
+    }
     .text-box{
       font-size: 14px;
       br{
@@ -158,9 +170,10 @@ header{
     }
     .text-box--headline{
       max-width: none;
+      width: 67%;
     }
     .header--cta{
-      font-size: 3.6vw;
+      font-size: 3.55vw;
       line-height: 3.6vw;
       padding: 1.2em 2em;
     }

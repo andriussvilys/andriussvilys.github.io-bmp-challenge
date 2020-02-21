@@ -81,6 +81,14 @@ let galleryHeight = 300;
   });
 
   $(document).on('ready', function () {
+
+    document.querySelectorAll(".menu--list li").forEach(li => {
+      li.addEventListener("click", ()=>{
+        console.log("clicked LI")
+        document.querySelector(".menu-links-container").classList.toggle("menu-links-container__display-on")
+
+      })
+    })
     
     observeCarousel()
 
