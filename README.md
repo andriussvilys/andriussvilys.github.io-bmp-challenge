@@ -1,11 +1,13 @@
 <h2 align="center">Dev_test 2019<h2>
 
-[**👽👽👽 Live demo**](https://andriussvilys-dev-test.ranyboskie.pl/) <br><br>
+[**👽~Click here to open~ Live demo 👽**](https://andriussvilys.github.io/bmb-challenge/) <br><br>
 
 ### Features:
-- Responsive
+- Google Maps API
+- jquery Slick carousels
+- Responsive design
 - scss
-- Parcel bundler
+- Bundled with Parcel
 
 ### Project setup:
 - Clone this repository and install dependencies with `npm i` <br>
