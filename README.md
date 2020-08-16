@@ -23,3 +23,5 @@
 ### credit:
 - hosting and parcel implementation supported by Kuba Maksimowicz
 - hamburger menu icon @author Jonathan Suh @jonsuh
+
+![page view](https://i.imgur.com/XmySBQi.png)
