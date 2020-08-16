@@ -1,6 +1,7 @@
 <h2 align="center">Dev_test 2019<h2>
 
-[**👽 *Click here to open Live demo* 👽**](https://andriussvilys.github.io/bmb-challenge/) <br><br>
+[**👽 *Click here to open Live demo* 👽**](https://andriussvilys.github.io/bmb-challenge/)
+![page view](https://i.imgur.com/XmySBQi.png)
 
 ### Features:
 - Google Maps API
@@ -23,5 +24,3 @@
 ### credit:
 - hosting and parcel implementation supported by Kuba Maksimowicz
 - hamburger menu icon @author Jonathan Suh @jonsuh
-
-![page view](https://i.imgur.com/XmySBQi.png)
