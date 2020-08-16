@@ -1,6 +1,4 @@
-<h2 align="center">Dev_test 2019<h2>
-
-[**👽 *Click here to open Live demo* 👽**](https://andriussvilys.github.io/bmb-challenge/)
+[**👽 *Click here to open Live demo* 👽**](https://andriussvilys.github.io/bmb-challenge/)<br>
 ![page view](https://i.imgur.com/XmySBQi.png)
 
 ### Features:
